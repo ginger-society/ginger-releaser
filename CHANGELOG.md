@@ -1,4 +1,10 @@
 ## Unreleased commits
+ - [87c08fa903](https://github.com/project/87c08fa9038dde0436a5fcc3580bcd920e7685ce) (Ginger Society Admin) fix: minor fixes
+	
+ - [a176acfeea](https://github.com/project/a176acfeea38e79fdb976e268acabb9c9edf5f0f) (Ginger Society Admin) feat: added bump command
+	
+ - [9afe99ebe5](https://github.com/project/9afe99ebe59cc211d027bfc4681e1857cb735082) (Ginger Society Admin) feat: added BumpVersion function
+	
  - [eb06acb474](https://github.com/project/eb06acb47411a0d95959471a7e6d50c01b284b77) (Ginger Society Admin) feat: added support for git_url_prefix in config
 	
 ## 0.2

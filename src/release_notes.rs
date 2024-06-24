@@ -4,7 +4,12 @@ use std::fs::File;
 use std::io::Write;
 use std::process::exit;
 
-pub fn generate_release_notes(git_url_prefix: &String) -> Result<(), git2::Error> {
+use crate::utils::Version;
+
+pub fn generate_release_notes(
+    git_url_prefix: &String,
+    version: Version,
+) -> Result<(), git2::Error> {
     let repo = Repository::open(".")?;
     let mut tags: HashMap<String, Oid> = HashMap::new();
     let mut release_notes: HashMap<String, Vec<String>> = HashMap::new();
@@ -105,7 +110,7 @@ pub fn generate_release_notes(git_url_prefix: &String) -> Result<(), git2::Error
             commit_messages.push(formatted_message);
         }
 
-        release_notes.insert(String::from("Unreleased commits"), commit_messages);
+        release_notes.insert(version.formatted(), commit_messages);
     }
 
     match File::create("CHANGELOG.md") {
