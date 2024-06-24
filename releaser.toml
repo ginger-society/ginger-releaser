@@ -1,8 +1,8 @@
 [version]
-channel = "Final"
+channel = "Nightly"
 major = 5
 minor = 3
-patch = 0
+patch = 1
 revision = 0
 
 [[references]]

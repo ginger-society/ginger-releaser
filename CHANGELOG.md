@@ -1,4 +1,7 @@
+## 5.3.1-nightly.0
 ## 5.3.0
+ - [6400dd8518](https://github.com/ginger-society/ginger-releaser/commit/6400dd8518952e08c6396f91cc4845bfb96294bd) (Ginger Society Admin) chore: version bump to 5.3.0
+	
 ## 5.2.0
  - [d41fc3bca6](https://github.com/ginger-society/ginger-releaser/commit/d41fc3bca65be0e52bdd15f1919c16197f3a17fc) (Ginger Society Admin) chore: version bump to 5.2.0
 	
