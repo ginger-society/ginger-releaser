@@ -1,8 +1,8 @@
 [version]
-channel = "Beta"
-major = 6
-minor = 7
-patch = 1
+channel = "Final"
+major = 7
+minor = 0
+patch = 0
 revision = 0
 
 [[references]]
