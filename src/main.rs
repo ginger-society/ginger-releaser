@@ -2,7 +2,7 @@ use bump::{bump_version, BumpType};
 use clap::{Parser, Subcommand};
 use init::init;
 use references::update_references;
-use utils::{read_config, write_config, Config, Version};
+use utils::{read_config, write_config};
 
 mod bump;
 mod init;

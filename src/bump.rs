@@ -17,8 +17,9 @@ pub fn bump_version(bump_type: BumpType, version: &mut Version) -> &mut Version 
         BumpType::Channel => {
             let options = Channel::all();
             let ans: Result<Channel, InquireError> =
-                Select::new("Please select the channel used in this project", options)
+                Select::new("Please select the new channel", options)
                     .with_starting_cursor(version.channel.index_of())
+                    .with_help_message("By default the existing channel is selected.")
                     .prompt();
 
             version.channel = ans.unwrap()
