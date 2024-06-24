@@ -109,7 +109,10 @@ pub fn generate_release_notes(
 
             commit_messages.push(formatted_message);
         }
-
+        println!(
+            "version in the first heading heading {}",
+            version.formatted()
+        );
         release_notes.insert(version.formatted(), commit_messages);
     }
 
@@ -143,6 +146,7 @@ pub fn generate_release_notes(
                             Err(_) => exit(0),
                         };
                         for note in notes {
+                            println!("{}", note);
                             match write!(release_notes_file, "{}", note) {
                                 Ok(()) => {}
                                 Err(_) => exit(0),
