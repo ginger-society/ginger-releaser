@@ -1,4 +1,7 @@
+## 8.2.1
 ## 8.2.0
+ - [53e4a954e6](https://github.com/ginger-society/ginger-releaser/commit/53e4a954e69cee3cc437de4e3cbf437a42264311) (Ginger Society Admin) chore: version bump to 8.2.0
+	
 ## 8.1.0
  - [11c14780ee](https://github.com/ginger-society/ginger-releaser/commit/11c14780eed2b42ac6c2298ee5e9b60d26d6080d) (Ginger Society Admin) chore: version bump to 8.1.0
 	
