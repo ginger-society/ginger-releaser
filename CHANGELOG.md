@@ -1,5 +1,12 @@
+## 0.7.0-nightly.0
+ - [0d9f294129](https://github.com/project/0d9f2941293c30065f0bf7269239f31ab75e1753) (Ginger Society Admin) chore: test 14
+	
+ - [a825d9f367](https://github.com/project/a825d9f3675b9c7c970c3221841ce2b4c9dae72c) (Ginger Society Admin) chore: test 13
+	
 ## 0.6.0-nightly.0
- - [e7547637b5](https://github.com/project/e7547637b59c2debdaf6b35724cb08fe8c4f53e4) (Ginger Society Admin) chore: test 12
+ - [0afaeb2780](https://github.com/ginger-society/ginger-releaser/commit/0afaeb27806f134351b9ba99877ecc158218dcb0) (Ginger Society Admin) chore: version bump to 0.6.0-nightly.0
+	
+ - [e7547637b5](https://github.com/ginger-society/ginger-releaser/commit/e7547637b59c2debdaf6b35724cb08fe8c4f53e4) (Ginger Society Admin) chore: test 12
 	
 ## 0.5.0-nightly.0
  - [2112fad6b4](https://github.com/ginger-society/ginger-releaser/commit/2112fad6b481d07025c9204b1774fc84e2b15dad) (Ginger Society Admin) chore: version bump to 0.5.0-nightly.0
