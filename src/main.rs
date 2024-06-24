@@ -1,10 +1,7 @@
 use bump::{bump_channel, bump_version, BumpType};
 use clap::{Parser, Subcommand};
 use init::init;
-use references::update_references;
 use utils::{read_config, update_project_source, write_config};
-
-use std::process::Command;
 
 mod bump;
 mod init;
