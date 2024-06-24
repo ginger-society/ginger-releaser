@@ -1,4 +1,7 @@
+## 1.15.0-beta.0
 ## 1.14.0-beta.0
+ - [e45b2fc42b](https://github.com/ginger-society/ginger-releaser/commit/e45b2fc42b9a55d3f619800bc3e56c455e0c0b42) (Ginger Society Admin) chore: version bump to 1.14.0-beta.0
+	
  - [0d030439be](https://github.com/ginger-society/ginger-releaser/commit/0d030439beb1ffe08dc8aa8fddf0866eafddd45d) (Ginger Society Admin) feat: added semantic compatision of tags
 	
 ## 1.13.0-beta.0
