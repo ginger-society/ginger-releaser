@@ -19,7 +19,10 @@ pub fn bump_version(bump_type: BumpType, version: &mut Version) -> &mut Version 
             Channel::Alpha => version.channel = Channel::Beta,
             Channel::Beta => {
                 version.channel = Channel::Final;
-                version.patch += 1;
+                version.major += 1;
+                version.minor = 0;
+                version.patch = 0;
+                version.revision = 0;
             }
         },
         BumpType::Major => {
