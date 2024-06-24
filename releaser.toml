@@ -1,3 +1,6 @@
+[settings]
+git_url_prefix = "https://github.com/ginger-society/ginger-releaser/commit/"
+
 [version]
 channel = "Final"
 major = 5

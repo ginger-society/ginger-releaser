@@ -4,7 +4,7 @@ use std::fs::File;
 use std::io::Write;
 use std::process::exit;
 
-pub fn generate_release_notes() -> Result<(), git2::Error> {
+pub fn generate_release_notes(git_url_prefix: &String) -> Result<(), git2::Error> {
     let repo = Repository::open(".")?;
     let mut tags: HashMap<String, Oid> = HashMap::new();
     let mut release_notes: HashMap<String, Vec<String>> = HashMap::new();
@@ -52,8 +52,9 @@ pub fn generate_release_notes() -> Result<(), git2::Error> {
             let author = commit.author();
             let message = commit.message().unwrap_or_default();
             let formatted_message = format!(
-                " - [{}](https://github.com/project/{}) ({}) {}\n",
+                " - [{}]({}{}) ({}) {}\n",
                 &commit_hash[..10],
+                git_url_prefix,
                 commit_hash,
                 author.name().unwrap_or_default(),
                 message.replace("\n", "\n\t")

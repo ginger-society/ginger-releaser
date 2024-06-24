@@ -3,7 +3,7 @@ use std::fs;
 use std::io::Write;
 use std::path::Path;
 
-use crate::utils::{Channel, Config, Version};
+use crate::utils::{Channel, Config, Settings, Version};
 
 pub fn init(config_path: &str) -> Result<(), Box<dyn Error>> {
     if !Path::new(config_path).exists() {
@@ -18,6 +18,9 @@ pub fn init(config_path: &str) -> Result<(), Box<dyn Error>> {
         let initial_config = Config {
             version: initial_version.clone(),
             references: vec![],
+            settings: Settings {
+                git_url_prefix: String::from(""),
+            },
         };
 
         let toml_string = toml::to_string(&initial_config)?;

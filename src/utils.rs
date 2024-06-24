@@ -115,10 +115,16 @@ fn default_output_type() -> OutputType {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
+pub struct Settings {
+    pub git_url_prefix: String,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
 pub struct Config {
     pub version: Version,
     #[serde(default = "default_references")]
     pub references: Vec<Reference>,
+    pub settings: Settings,
 }
 
 fn default_references() -> Vec<Reference> {

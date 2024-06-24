@@ -42,7 +42,7 @@ fn main() {
             let config = utils::read_config(file_path).unwrap();
 
             update_references(&config);
-            match release_notes::generate_release_notes() {
+            match release_notes::generate_release_notes(&config.settings.git_url_prefix) {
                 Err(e) => {
                     println!("Unable to generate {:?}", e);
                 }
