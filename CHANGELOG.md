@@ -1,7 +1,12 @@
-## 0.7.0-nightly.0
- - [0d9f294129](https://github.com/project/0d9f2941293c30065f0bf7269239f31ab75e1753) (Ginger Society Admin) chore: test 14
+## 0.8.0-nightly.0
+ - [f1a0840890](https://github.com/ginger-society/ginger-releaser/commit/f1a08408901c9d4af9d6b06eedeccf79f6ed34d1) (Ginger Society Admin) chore: fixed git url prefix
 	
- - [a825d9f367](https://github.com/project/a825d9f3675b9c7c970c3221841ce2b4c9dae72c) (Ginger Society Admin) chore: test 13
+## 0.7.0-nightly.0
+ - [b13bd3e4da](https://github.com/ginger-society/ginger-releaser/commit/b13bd3e4da5f53598ecfcdf41db0030b08dd6295) (Ginger Society Admin) chore: version bump to 0.7.0-nightly.0
+	
+ - [0d9f294129](https://github.com/ginger-society/ginger-releaser/commit/0d9f2941293c30065f0bf7269239f31ab75e1753) (Ginger Society Admin) chore: test 14
+	
+ - [a825d9f367](https://github.com/ginger-society/ginger-releaser/commit/a825d9f3675b9c7c970c3221841ce2b4c9dae72c) (Ginger Society Admin) chore: test 13
 	
 ## 0.6.0-nightly.0
  - [0afaeb2780](https://github.com/ginger-society/ginger-releaser/commit/0afaeb27806f134351b9ba99877ecc158218dcb0) (Ginger Society Admin) chore: version bump to 0.6.0-nightly.0
