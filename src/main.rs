@@ -2,7 +2,7 @@ use bump::{bump_version, BumpType};
 use clap::{Parser, Subcommand};
 use init::init;
 use references::update_references;
-use utils::{read_config, write_config, Version};
+use utils::{read_config, write_config};
 
 use std::process::Command;
 
