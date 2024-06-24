@@ -1,12 +1,9 @@
-[settings]
-git_url_prefix = "https://github.com/ginger-society/ginger-releaser/commit/"
-
 [version]
-channel = "Final"
-major = 5
-minor = 2
-patch = 2
-revision = 2
+channel = "Alpha"
+major = 7
+minor = 0
+patch = 0
+revision = 0
 
 [[references]]
 file_name = "test_files/__init__.py"
@@ -15,16 +12,23 @@ variable = "VERSION"
 
 [[references]]
 file_name = "test_files/__init__.py"
+output_type = "String"
 variable = "__version__"
 
 [[references]]
 file_name = "test_files/Cargo.toml"
+output_type = "String"
 variable = "version"
 
 [[references]]
 file_name = "test_files/package.json"
+output_type = "String"
 variable = "version"
 
 [[references]]
 file_name = "test_files/test.txt"
+output_type = "String"
 variable = "version"
+
+[settings]
+git_url_prefix = "https://github.com/ginger-society/ginger-releaser/commit/"

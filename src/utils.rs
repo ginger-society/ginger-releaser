@@ -220,3 +220,9 @@ pub fn update_json(
     *contents = serde_json::to_string_pretty(&json_value)?;
     Ok(contents.to_string())
 }
+
+pub fn write_config(file_path: &str, config: &Config) -> Result<(), Box<dyn Error>> {
+    let toml_str = toml::to_string(config)?;
+    fs::write(file_path, toml_str)?;
+    Ok(())
+}
