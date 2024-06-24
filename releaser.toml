@@ -30,5 +30,9 @@ file_name = "test_files/test.txt"
 output_type = "String"
 variable = "version"
 
+[[references]]
+file_name = "Cargo.toml"
+variable = "version"
+
 [settings]
 git_url_prefix = "https://github.com/ginger-society/ginger-releaser/commit/"
