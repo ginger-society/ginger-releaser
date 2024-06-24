@@ -1,5 +1,4 @@
 use clap::Subcommand;
-use inquire::{InquireError, Select};
 
 use crate::utils::{Channel, Version};
 
@@ -14,16 +13,12 @@ pub enum BumpType {
 
 pub fn bump_version(bump_type: BumpType, version: &mut Version) -> &mut Version {
     match bump_type {
-        BumpType::Channel => {
-            let options = Channel::all();
-            let ans: Result<Channel, InquireError> =
-                Select::new("Please select the new channel", options)
-                    .with_starting_cursor(version.channel.index_of())
-                    .with_help_message("By default the existing channel is selected.")
-                    .prompt();
-
-            version.channel = ans.unwrap()
-        }
+        BumpType::Channel => match version.channel {
+            Channel::Nightly => version.channel = Channel::Alpha,
+            Channel::Final => version.channel = Channel::Alpha,
+            Channel::Alpha => version.channel = Channel::Beta,
+            Channel::Beta => version.channel = Channel::Final,
+        },
         BumpType::Major => {
             version.major += 1;
             version.minor = 0;
