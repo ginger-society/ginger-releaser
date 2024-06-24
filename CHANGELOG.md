@@ -1,4 +1,7 @@
+## 5.2.0
 ## 5.1.0
+ - [661901c7ff](https://github.com/ginger-society/ginger-releaser/commit/661901c7ff9278cdeefae5ee7d27592bc75fe866) (Ginger Society Admin) chore: version bump to 5.1.0
+	
 ## 5.0.0
  - [153e1007cb](https://github.com/ginger-society/ginger-releaser/commit/153e1007cbe8be19d0ba2ea42f54be4340aecfe7) (Ginger Society Admin) chore: version bump to 5.0.0
 	
