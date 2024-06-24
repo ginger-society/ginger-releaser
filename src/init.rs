@@ -8,7 +8,7 @@ use crate::utils::{Channel, Config, Settings, Version};
 pub fn init(config_path: &str) -> Result<(), Box<dyn Error>> {
     if !Path::new(config_path).exists() {
         let initial_version = Version {
-            channel: Channel::Nighly,
+            channel: Channel::Nightly,
             major: 0,
             minor: 0,
             patch: 0,
