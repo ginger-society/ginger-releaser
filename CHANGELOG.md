@@ -1,4 +1,6 @@
 ## Unreleased commits
+ - [3f59ae6241](https://github.com/project/3f59ae6241373829c26c78ee2c3f3bf980cbcd05) (Ginger Society Admin) feat: changed file name from release_notes to CHANGELOG
+	
  - [b6078ca086](https://github.com/project/b6078ca0868817fd7a4794026f6e92fff9a83cb7) (Ginger Society Admin) feat: generated changelog for this project
 	
  - [4e045159d9](https://github.com/project/4e045159d983d1e797b5757d386cc0bf648a89cd) (Ginger Society Admin) feat: added readme
