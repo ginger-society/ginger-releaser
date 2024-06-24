@@ -1,4 +1,9 @@
+## 6.4.0
+ - [b2998b9f4c](https://github.com/ginger-society/ginger-releaser/commit/b2998b9f4c68f5740ba107057c9f9fc3bae093ee) (Ginger Society Admin) feat: added cargo.lock
+	
 ## 6.3.0
+ - [eea1d263b9](https://github.com/ginger-society/ginger-releaser/commit/eea1d263b964cbed9543401107be42f7b81492ab) (Ginger Society Admin) chore: version bump to 6.3.0
+	
  - [e5b1fdcc22](https://github.com/ginger-society/ginger-releaser/commit/e5b1fdcc222a607c4d1421fe534d9c0c3314a5eb) (Ginger Society Admin) feat: added Cargo.toml in references
 	
 ## 6.2.0
