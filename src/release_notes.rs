@@ -110,17 +110,17 @@ pub fn generate_release_notes(
             commit_messages.push(formatted_message);
         }
 
-        release_notes.insert(String::from("Unreleased commits"), commit_messages);
+        release_notes.insert(String::from(version.formatted()), commit_messages);
     }
 
     match File::create("CHANGELOG.md") {
         Ok(mut release_notes_file) => {
-            match release_notes.get("Unreleased commits") {
+            match release_notes.get(&version.formatted()) {
                 Some(notes) => {
                     match write!(
                         release_notes_file,
                         "## {}\n",
-                        String::from("Unreleased commits")
+                        String::from(version.formatted())
                     ) {
                         Ok(()) => {}
                         Err(_) => exit(0),
