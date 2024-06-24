@@ -1,2 +1,2 @@
-VERSION = (0, 11, 3, "alpha", 0)
-__version__ = "0.11.3-alpha.0"
+VERSION = (0, 11, 3, "beta", 0)
+__version__ = "0.11.3-beta.0"
