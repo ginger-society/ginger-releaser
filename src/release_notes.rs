@@ -113,6 +113,7 @@ pub fn generate_release_notes(
             "version in the first heading heading {}",
             version.formatted()
         );
+        println!("{:?}", commit_messages);
         release_notes.insert(version.formatted(), commit_messages);
     }
 
