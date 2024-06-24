@@ -1,4 +1,7 @@
+## 4.9.0-nightly.0
 ## 4.8.0-nightly.0
+ - [2e29bce913](https://github.com/ginger-society/ginger-releaser/commit/2e29bce91354e98cfb5bd5316fbfdf0216f1fa0b) (Ginger Society Admin) chore: version bump to 4.8.0-nightly.0
+	
 ## 4.7.0-nightly.0
  - [55b385a74e](https://github.com/ginger-society/ginger-releaser/commit/55b385a74e930f4b84c6be86daa34469deec221f) (Ginger Society Admin) chore: version bump to 4.7.0-nightly.0
 	
