@@ -74,7 +74,7 @@ pub fn generate_release_notes(
             .extend(commit_messages);
     }
 
-    // Collect commits since the last tag under "Unreleased commits"
+    // Collect commits since the last tag under version.formatted()
     let mut revwalk = repo.revwalk()?;
     let head = repo.head()?;
 
@@ -109,22 +109,17 @@ pub fn generate_release_notes(
 
             commit_messages.push(formatted_message);
         }
-        println!(
-            "version in the first heading heading {}",
-            version.formatted()
-        );
-        println!("{:?}", commit_messages);
         release_notes.insert(version.formatted(), commit_messages);
     }
 
     match File::create("CHANGELOG.md") {
         Ok(mut release_notes_file) => {
-            match release_notes.get("Unreleased commits") {
+            match release_notes.get(&version.formatted()) {
                 Some(notes) => {
                     match write!(
                         release_notes_file,
                         "## {}\n",
-                        String::from("Unreleased commits")
+                        String::from(version.formatted())
                     ) {
                         Ok(()) => {}
                         Err(_) => exit(0),
