@@ -1,2 +1,2 @@
-VERSION = (4, 4, 0, "final", 0)
-__version__ = "4.4.0"
+VERSION = (4, 4, 1, "nightly", 0)
+__version__ = "4.4.1-nightly.0"
