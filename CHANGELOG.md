@@ -1,4 +1,7 @@
+## 3.5.0
 ## 3.4.0
+ - [aa4c4190b4](https://github.com/ginger-society/ginger-releaser/commit/aa4c4190b4f726be04d9ea282762808b4a5dee59) (Ginger Society Admin) chore: version bump to 3.4.0
+	
 ## 3.3.0
  - [3345a41acf](https://github.com/ginger-society/ginger-releaser/commit/3345a41acf82929cf63636f59383d1ffe0a67711) (Ginger Society Admin) chore: version bump to 3.3.0
 	
