@@ -1,4 +1,9 @@
+## 6.6.0
+ - [78e53a18fe](https://github.com/ginger-society/ginger-releaser/commit/78e53a18fe082b2230202f331c69b794692669f4) (Ginger Society Admin) feat: minor
+	
 ## 6.5.0
+ - [de8bbcecd9](https://github.com/ginger-society/ginger-releaser/commit/de8bbcecd95096ff330525b2b416c3d996217c4a) (Ginger Society Admin) chore: version bump to 6.5.0
+	
  - [d633d2d64e](https://github.com/ginger-society/ginger-releaser/commit/d633d2d64e805cd3e16ac03b3236ff5a640bb521) (Ginger Society Admin) feat: minor
 	
 ## 6.4.0
