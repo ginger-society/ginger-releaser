@@ -1,7 +1,7 @@
 [version]
 channel = "Final"
 major = 6
-minor = 2
+minor = 3
 patch = 0
 revision = 0
 
@@ -32,6 +32,7 @@ variable = "version"
 
 [[references]]
 file_name = "Cargo.toml"
+output_type = "String"
 variable = "version"
 
 [settings]

@@ -1,4 +1,9 @@
+## 6.3.0
+ - [e5b1fdcc22](https://github.com/ginger-society/ginger-releaser/commit/e5b1fdcc222a607c4d1421fe534d9c0c3314a5eb) (Ginger Society Admin) feat: added Cargo.toml in references
+	
 ## 6.2.0
+ - [a4e1cfc3e0](https://github.com/ginger-society/ginger-releaser/commit/a4e1cfc3e0d319eed58993fd774d077410a623c8) (Ginger Society Admin) chore: version bump to 6.2.0
+	
  - [83d3b747c8](https://github.com/ginger-society/ginger-releaser/commit/83d3b747c8346e5c486cc02a95bbd8b9b749c765) (Ginger Society Admin) chore: test 14
 	
 ## 6.1.0
