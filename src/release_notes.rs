@@ -107,7 +107,7 @@ pub fn generate_release_notes() -> Result<(), git2::Error> {
         release_notes.insert(String::from("Unreleased commits"), commit_messages);
     }
 
-    match File::create("release_notes.md") {
+    match File::create("CHANGELOG.md") {
         Ok(mut release_notes_file) => {
             match release_notes.get("Unreleased commits") {
                 Some(notes) => {
