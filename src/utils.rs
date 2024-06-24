@@ -30,14 +30,47 @@ impl fmt::Display for FileType {
         }
     }
 }
+#[derive(Debug, Deserialize)]
+pub enum Channel {
+    Final,
+    Nighly, // Also known as Dev branch
+    Alpha,
+    Beta,
+}
+impl fmt::Display for Channel {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Channel::Nighly => write!(f, "nighly"),
+            Channel::Final => write!(f, "final"),
+            Channel::Alpha => write!(f, "alpha"),
+            Channel::Beta => write!(f, "beta"),
+        }
+    }
+}
 
 #[derive(Debug, Deserialize)]
 pub struct Version {
-    pub channel: String,
+    pub channel: Channel,
     pub major: u32,
     pub minor: u32,
     pub patch: u32,
     pub revision: u32,
+}
+
+impl Version {
+    pub fn formatted(&self) -> String {
+        match &self.channel {
+            Channel::Final => {
+                format!("{}.{}.{}", self.major, self.minor, self.patch)
+            }
+            _ => {
+                format!(
+                    "{}.{}.{}-{}.{}",
+                    self.major, self.minor, self.patch, self.channel, self.revision
+                )
+            }
+        }
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -76,7 +109,12 @@ fn default_output_type() -> OutputType {
 #[derive(Debug, Deserialize)]
 pub struct Config {
     pub version: Version,
+    #[serde(default = "default_references")]
     pub references: Vec<Reference>,
+}
+
+fn default_references() -> Vec<Reference> {
+    vec![]
 }
 
 pub fn read_config(file_path: &str) -> Result<Config, Box<dyn Error>> {

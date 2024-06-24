@@ -28,14 +28,7 @@ fn main() {
     let file_path = "releaser.toml"; // Update the path to your TOML file
 
     let config = utils::read_config(file_path).unwrap();
-    println!(
-        "Version: {}.{}.{}-{}.{}",
-        config.version.major,
-        config.version.minor,
-        config.version.patch,
-        config.version.channel,
-        config.version.revision
-    );
+    println!("{}", config.version.formatted());
 
     for reference in config.references {
         println!(
