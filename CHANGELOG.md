@@ -1,4 +1,7 @@
+## 3.9.0-beta.0
 ## 3.8.0-beta.0
+ - [b20c5c0fec](https://github.com/ginger-society/ginger-releaser/commit/b20c5c0fec06a0e218fd229b6786ad15febd5691) (Ginger Society Admin) chore: version bump to 3.8.0-beta.0
+	
 ## 3.7.0-beta.0
  - [fd87d71482](https://github.com/ginger-society/ginger-releaser/commit/fd87d714823ec878cd6eee136cda141fc68965a2) (Ginger Society Admin) chore: version bump to 3.7.0-beta.0
 	
