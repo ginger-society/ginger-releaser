@@ -1,4 +1,7 @@
+## 7.1.0
 ## 7.0.0
+ - [b090d20dc1](https://github.com/ginger-society/ginger-releaser/commit/b090d20dc1d8a2518e92c348dbf50cf148f6eabd) (Ginger Society Admin) chore: version bump to 7.0.0
+	
  - [1154c3b31f](https://github.com/ginger-society/ginger-releaser/commit/1154c3b31fc11919f91a7c80810e25f42cf8f97b) (Ginger Society Admin) feat: cleanup
 	
 ## 6.7.1-beta.0
