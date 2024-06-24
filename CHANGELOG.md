@@ -1,4 +1,11 @@
+## 6.7.1-beta.0
+ - [260f7fd7a0](https://github.com/ginger-society/ginger-releaser/commit/260f7fd7a00d7a9b707327f59c6dd74c50c1a962) (Ginger Society Admin) feat: refactor
+	
+ - [8ac220ea59](https://github.com/ginger-society/ginger-releaser/commit/8ac220ea597d31f6f54eeb3e160a3bd7dc84e240) (Ginger Society Admin) feat: prevent final to go back to nightly
+	
 ## 6.7.0
+ - [c4023c3852](https://github.com/ginger-society/ginger-releaser/commit/c4023c385252ed0a3af242c7b9e27acfe6787628) (Ginger Society Admin) chore: version bump to 6.7.0
+	
 ## 6.6.0
  - [df76262bc9](https://github.com/ginger-society/ginger-releaser/commit/df76262bc978843c05f58220e1e7f3e70d935a77) (Ginger Society Admin) chore: version bump to 6.6.0
 	
