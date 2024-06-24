@@ -1,4 +1,8 @@
-## 7.19.0-beta.0
+## 7.20.0-beta.0
+ - [5cbdb168b0](https://github.com/project/5cbdb168b047b5c4daa2060a9d72e94e4047d7b4) (Ginger Society Admin) chore: test 8
+	
+ - [c36b2f44cd](https://github.com/project/c36b2f44cdfc2545601d75a6fa40ed5ed1f02c29) (Ginger Society Admin) chore: version bump to 7.19.0-beta.0
+	
  - [4c27ab0204](https://github.com/project/4c27ab02040479f750d293a9c09d9c98ed9acb95) (Ginger Society Admin) chore: test 7
 	
  - [2b04eab1b5](https://github.com/project/2b04eab1b5b506fdfe39da9bd79a9dd8a5c8c0ab) (Ginger Society Admin) chore: version bump to 7.18.0-beta.0
@@ -31,6 +35,11 @@
  - [dad784bb00](https://github.com/ginger-society/ginger-releaser/commit/dad784bb0055446ebb5cf0b2fa44c9a2ef65bf8a) (Ginger Society Admin) chore: testing
 	
 ## 7.2.0-beta.0
+## 7.19.0-beta.0
+ - [c36b2f44cd](https://github.com/ginger-society/ginger-releaser/commit/c36b2f44cdfc2545601d75a6fa40ed5ed1f02c29) (Ginger Society Admin) chore: version bump to 7.19.0-beta.0
+	
+ - [4c27ab0204](https://github.com/ginger-society/ginger-releaser/commit/4c27ab02040479f750d293a9c09d9c98ed9acb95) (Ginger Society Admin) chore: test 7
+	
 ## 7.18.0-beta.0
  - [2b04eab1b5](https://github.com/ginger-society/ginger-releaser/commit/2b04eab1b5b506fdfe39da9bd79a9dd8a5c8c0ab) (Ginger Society Admin) chore: version bump to 7.18.0-beta.0
 	
