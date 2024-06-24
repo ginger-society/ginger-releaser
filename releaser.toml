@@ -1,20 +1,24 @@
 [version]
 channel = "Final"
-major = 1
+major = 4
 minor = 2
 patch = 2
 revision = 2
 
 [[references]]
-file_name = "file1.py"
+file_name = "test_files/__init__.py"
 output_type = "Tuple"
-variable = "var1"
+variable = "VERSION"
 
 [[references]]
-file_name = "file2.toml"
+file_name = "test_files/__init__.py"
 output_type = "String"
-variable = "var2"
+variable = "__version__"
 
 [[references]]
-file_name = "file3.txt"
-variable = "var3"
+file_name = "test_files/Cargo.toml"
+variable = "version"
+
+[[references]]
+file_name = "test_files/package.json"
+variable = "version"

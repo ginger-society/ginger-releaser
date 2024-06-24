@@ -1,4 +1,6 @@
+use regex::Regex;
 use serde::{Deserialize, Serialize};
+use serde_json::Value;
 use std::{error::Error, fmt, fs, path::Path};
 
 #[derive(Debug)]
@@ -71,6 +73,12 @@ impl Version {
             }
         }
     }
+    pub fn tuple(&self) -> String {
+        format!(
+            "({}, {}, {}, \"{}\", {})",
+            self.major, self.minor, self.patch, self.channel, self.revision
+        )
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -130,4 +138,63 @@ pub fn read_config(file_path: &str) -> Result<Config, Box<dyn Error>> {
     }
 
     Ok(config)
+}
+
+pub fn update_py(
+    contents: &mut String,
+    version: &Version,
+    variable: &String,
+    output_type: &OutputType,
+) -> Result<String, Box<dyn Error>> {
+    let version_str = match output_type {
+        OutputType::Tuple => version.tuple(),
+        OutputType::String => format!("\"{}\"", version.formatted()),
+    };
+    // Regex to match the VERSION variable assignment
+    let re_variable = Regex::new(&format!(r"(?m)^{} = .*", regex::escape(variable)))?;
+    // Regex to match the __version__ variable assignment
+
+    // Update VERSION variable
+    *contents = re_variable
+        .replace_all(contents, format!("{} = {}", variable, version_str).as_str())
+        .to_string();
+
+    Ok(contents.to_string())
+}
+
+pub fn update_toml(
+    contents: &mut String,
+    version: &Version,
+    variable: &String,
+) -> Result<String, Box<dyn Error>> {
+    let version_str = version.formatted();
+    // Regex to match the version variable assignment
+    let re_version = Regex::new(&format!(r#"(?m)^{} = ".*""#, regex::escape(variable)))?;
+
+    // Update version variable
+    *contents = re_version
+        .replace_all(
+            contents,
+            format!(r#"{} = "{}""#, variable, version_str).as_str(),
+        )
+        .to_string();
+
+    Ok(contents.to_string())
+}
+
+pub fn update_json(
+    contents: &mut String,
+    version: &Version,
+    variable: &String,
+) -> Result<String, Box<dyn Error>> {
+    let mut json_value: Value = serde_json::from_str(contents)?;
+
+    if let Some(obj) = json_value.as_object_mut() {
+        if let Some(_) = obj.get_mut(variable) {
+            obj[variable] = Value::String(version.formatted());
+        }
+    }
+
+    *contents = serde_json::to_string_pretty(&json_value)?;
+    Ok(contents.to_string())
 }

@@ -1,5 +1,13 @@
+use std::fs;
+use std::process::exit;
+
 use clap::Parser;
 use clap::Subcommand;
+use utils::update_json;
+use utils::update_py;
+use utils::update_toml;
+use utils::FileType;
+use utils::OutputType;
 
 mod release_notes;
 mod utils;
@@ -29,12 +37,38 @@ fn main() {
 
     let config = utils::read_config(file_path).unwrap();
     println!("{}", config.version.formatted());
+    println!("{}", config.version.tuple());
 
     for reference in config.references {
         println!(
             "File: {}, Type: {}, Variable: {}, FileType : {}",
             reference.file_name, reference.output_type, reference.variable, reference.file_type
         );
+
+        let mut contents = fs::read_to_string(&reference.file_name).unwrap();
+        let var_name = reference.variable;
+        let updated_content = match reference.file_type {
+            FileType::Py => update_py(
+                &mut contents,
+                &config.version,
+                &var_name,
+                &reference.output_type,
+            )
+            .unwrap(),
+            FileType::Toml => update_toml(&mut contents, &config.version, &var_name).unwrap(),
+            FileType::Json => update_json(&mut contents, &config.version, &var_name).unwrap(),
+            FileType::Unknown => {
+                println!(
+                    "Unknown file type encountered {}, Can not proceed. Exiting!.",
+                    reference.file_type
+                );
+                exit(1)
+            }
+        };
+
+        println!("{}", updated_content);
+
+        fs::write(&reference.file_name, updated_content).unwrap();
     }
 
     match args.command {
