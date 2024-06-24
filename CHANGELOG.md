@@ -1,4 +1,7 @@
+## 4.3.0
 ## 4.2.0
+ - [b0b7d84e0d](https://github.com/ginger-society/ginger-releaser/commit/b0b7d84e0dfe01a939285a8bb5ebe61a2006ea90) (Ginger Society Admin) chore: version bump to 4.2.0
+	
 ## 4.1.0
  - [8ce2f6edd2](https://github.com/ginger-society/ginger-releaser/commit/8ce2f6edd27117b9f9437c249db0dd912a99e251) (Ginger Society Admin) chore: version bump to 4.1.0
 	
