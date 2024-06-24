@@ -1,4 +1,7 @@
+## 4.2.0
 ## 4.1.0
+ - [8ce2f6edd2](https://github.com/ginger-society/ginger-releaser/commit/8ce2f6edd27117b9f9437c249db0dd912a99e251) (Ginger Society Admin) chore: version bump to 4.1.0
+	
  - [2114c56aae](https://github.com/ginger-society/ginger-releaser/commit/2114c56aaefef2e021d3c3f333ff77f0574e9676) (Ginger Society Admin) fix: moving final to mightly
 	
 ## 4.0.0
