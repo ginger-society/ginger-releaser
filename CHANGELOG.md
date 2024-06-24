@@ -1,4 +1,7 @@
+## 1.18.0-beta.0
 ## 1.17.0-beta.0
+ - [c8501e1559](https://github.com/ginger-society/ginger-releaser/commit/c8501e1559ea5f01e799967e62017190a8d36ef7) (Ginger Society Admin) chore: version bump to 1.17.0-beta.0
+	
 ## 1.16.0-beta.0
  - [9013db7b14](https://github.com/ginger-society/ginger-releaser/commit/9013db7b144168b2634ee423419643b710a91b70) (Ginger Society Admin) chore: version bump to 1.16.0-beta.0
 	
