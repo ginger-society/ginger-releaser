@@ -1,5 +1,5 @@
 [version]
-channel = "Nightly"
+channel = "Alpha"
 major = 4
 minor = 14
 patch = 0
