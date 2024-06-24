@@ -49,22 +49,6 @@ impl fmt::Display for Channel {
         }
     }
 }
-impl Channel {
-    pub fn all() -> Vec<Channel> {
-        vec![
-            Channel::Final,
-            Channel::Nightly,
-            Channel::Alpha,
-            Channel::Beta,
-        ]
-    }
-    pub fn index_of(&self) -> usize {
-        Channel::all()
-            .iter()
-            .position(|channel| channel == self)
-            .unwrap_or(0)
-    }
-}
 
 impl From<&str> for Channel {
     fn from(channel: &str) -> Self {
