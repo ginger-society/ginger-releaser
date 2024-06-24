@@ -1,2 +1,2 @@
-VERSION = (5, 0, 0, "final", 0)
-__version__ = "5.0.0"
+VERSION = (5, 1, 0, "final", 0)
+__version__ = "5.1.0"
