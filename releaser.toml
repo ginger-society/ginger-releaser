@@ -1,0 +1,20 @@
+[version]
+channel = "alpha"
+major = 1
+minor = 2
+patch = 2
+revision = 2
+
+[[references]]
+file_name = "file1.py"
+output_type = "Tuple"
+variable = "var1"
+
+[[references]]
+file_name = "file2.toml"
+output_type = "String"
+variable = "var2"
+
+[[references]]
+file_name = "file3.txt"
+variable = "var3"
