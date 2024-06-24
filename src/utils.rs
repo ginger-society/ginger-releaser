@@ -35,14 +35,14 @@ impl fmt::Display for FileType {
 #[derive(Debug, Deserialize, Serialize, Clone, Copy, PartialEq)]
 pub enum Channel {
     Final,
-    Nighly, // Also known as Dev branch
+    Nightly, // Also known as Dev branch
     Alpha,
     Beta,
 }
 impl fmt::Display for Channel {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Channel::Nighly => write!(f, "nighly"),
+            Channel::Nightly => write!(f, "nightly"),
             Channel::Final => write!(f, "final"),
             Channel::Alpha => write!(f, "alpha"),
             Channel::Beta => write!(f, "beta"),
@@ -53,7 +53,7 @@ impl Channel {
     pub fn all() -> Vec<Channel> {
         vec![
             Channel::Final,
-            Channel::Nighly,
+            Channel::Nightly,
             Channel::Alpha,
             Channel::Beta,
         ]
