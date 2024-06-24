@@ -1,3 +1,5 @@
+use std::process::exit;
+
 use clap::Subcommand;
 
 use crate::utils::{Channel, Version};
@@ -7,27 +9,11 @@ pub enum BumpType {
     Major,
     Minor,
     Patch,
-    Channel,
     Revision,
 }
 
 pub fn bump_version(bump_type: BumpType, version: &mut Version) -> &mut Version {
     match bump_type {
-        BumpType::Channel => match version.channel {
-            Channel::Nightly => version.channel = Channel::Alpha,
-            Channel::Final => {
-                version.channel = Channel::Nightly;
-                version.patch += 1;
-            }
-            Channel::Alpha => version.channel = Channel::Beta,
-            Channel::Beta => {
-                version.channel = Channel::Final;
-                version.major += 1;
-                version.minor = 0;
-                version.patch = 0;
-                version.revision = 0;
-            }
-        },
         BumpType::Major => {
             version.major += 1;
             version.minor = 0;
@@ -46,5 +32,24 @@ pub fn bump_version(bump_type: BumpType, version: &mut Version) -> &mut Version 
         BumpType::Revision => version.revision += 1,
     }
 
+    version
+}
+
+pub fn bump_channel(version: &mut Version) -> &mut Version {
+    match version.channel {
+        Channel::Nightly => version.channel = Channel::Alpha,
+        Channel::Final => {
+            println!("Since the project is already out of Beta stage, please use major/minor/patch releaes.");
+            exit(1)
+        }
+        Channel::Alpha => version.channel = Channel::Beta,
+        Channel::Beta => {
+            version.channel = Channel::Final;
+            version.major += 1;
+            version.minor = 0;
+            version.patch = 0;
+            version.revision = 0;
+        }
+    }
     version
 }

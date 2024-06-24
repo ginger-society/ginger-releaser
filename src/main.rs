@@ -1,4 +1,4 @@
-use bump::{bump_version, BumpType};
+use bump::{bump_channel, bump_version, BumpType};
 use clap::{Parser, Subcommand};
 use init::init;
 use references::update_references;
@@ -21,6 +21,8 @@ enum Commands {
         #[command(subcommand)]
         bump_type: BumpType,
     },
+    /// Bumps channel in the order nighly < alpha < beta < final
+    Bump,
 }
 
 #[derive(Parser, Debug)]
@@ -45,6 +47,11 @@ fn main() {
             }
             Ok(_) => {}
         },
+        Commands::Bump => {
+            let mut config = read_config(file_path).unwrap();
+            bump_channel(&mut config.version);
+            write_config(file_path, &config).unwrap();
+        }
         Commands::Release { bump_type } => {
             let mut config = read_config(file_path).unwrap();
             bump_version(bump_type, &mut config.version);
