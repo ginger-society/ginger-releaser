@@ -1,4 +1,7 @@
+## 2.0.0-alpha.0
 ## 2.0.0
+ - [fa8000b13f](https://github.com/ginger-society/ginger-releaser/commit/fa8000b13f567ea6f3f06400ff4d0a2529b0e666) (Ginger Society Admin) chore: version bump to 2.0.0
+	
 ## 1.19.0-beta.0
  - [72cd912980](https://github.com/ginger-society/ginger-releaser/commit/72cd9129809866eb7332710bae7ee06dfba92d0b) (Ginger Society Admin) chore: version bump to 1.19.0-beta.0
 	
