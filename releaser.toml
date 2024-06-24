@@ -1,7 +1,7 @@
 [version]
 channel = "Nightly"
 major = 4
-minor = 9
+minor = 10
 patch = 0
 revision = 0
 
