@@ -32,7 +32,7 @@ impl fmt::Display for FileType {
         }
     }
 }
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy)]
 pub enum Channel {
     Final,
     Nighly, // Also known as Dev branch
@@ -50,7 +50,7 @@ impl fmt::Display for Channel {
     }
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy)]
 pub struct Version {
     pub channel: Channel,
     pub major: u32,
@@ -96,7 +96,7 @@ impl fmt::Display for OutputType {
     }
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct Reference {
     pub file_name: String,
     #[serde(default = "default_output_type")] // Use a default value function
@@ -114,7 +114,7 @@ fn default_output_type() -> OutputType {
     OutputType::String // Default value is "string"
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct Config {
     pub version: Version,
     #[serde(default = "default_references")]

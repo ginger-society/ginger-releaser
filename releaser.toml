@@ -1,6 +1,6 @@
 [version]
 channel = "Final"
-major = 4
+major = 5
 minor = 2
 patch = 2
 revision = 2
@@ -12,7 +12,6 @@ variable = "VERSION"
 
 [[references]]
 file_name = "test_files/__init__.py"
-output_type = "String"
 variable = "__version__"
 
 [[references]]
@@ -21,4 +20,8 @@ variable = "version"
 
 [[references]]
 file_name = "test_files/package.json"
+variable = "version"
+
+[[references]]
+file_name = "test_files/test.txt"
 variable = "version"
