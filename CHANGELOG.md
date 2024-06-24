@@ -1,4 +1,6 @@
-## 7.15.0-beta.0
+## 7.16.0-beta.0
+ - [dd2ebcbb8f](https://github.com/project/dd2ebcbb8f03f08883f3223c6587db804702f747) (Ginger Society Admin) chore: test 4
+	
  - [948f15a136](https://github.com/project/948f15a1363d2e520c713667445c51153f85475f) (Ginger Society Admin) feat: test3
 	
  - [6e3bc36ba4](https://github.com/project/6e3bc36ba411d65ceda47dc1e2096622fcc5318a) (Ginger Society Admin) chore: test 2
