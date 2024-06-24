@@ -1,4 +1,9 @@
+## 6.2.0
+ - [83d3b747c8](https://github.com/ginger-society/ginger-releaser/commit/83d3b747c8346e5c486cc02a95bbd8b9b749c765) (Ginger Society Admin) chore: test 14
+	
 ## 6.1.0
+ - [ad9c4f01b0](https://github.com/ginger-society/ginger-releaser/commit/ad9c4f01b00a57ff5b6d523cbc6ad949700aa24c) (Ginger Society Admin) chore: version bump to 6.1.0
+	
  - [e45f390bac](https://github.com/ginger-society/ginger-releaser/commit/e45f390bac6ed1845617ec9889d735504dbd14d9) (Ginger Society Admin) feat: test 13
 	
 ## 6.0.0

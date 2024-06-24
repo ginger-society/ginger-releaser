@@ -1,2 +1,2 @@
-VERSION = (6, 1, 0, "final", 0)
-__version__ = "6.1.0"
+VERSION = (6, 2, 0, "final", 0)
+__version__ = "6.2.0"
