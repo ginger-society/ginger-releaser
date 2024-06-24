@@ -32,7 +32,7 @@ impl fmt::Display for FileType {
         }
     }
 }
-#[derive(Debug, Deserialize, Serialize, Clone, Copy)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy, PartialEq)]
 pub enum Channel {
     Final,
     Nighly, // Also known as Dev branch
@@ -47,6 +47,22 @@ impl fmt::Display for Channel {
             Channel::Alpha => write!(f, "alpha"),
             Channel::Beta => write!(f, "beta"),
         }
+    }
+}
+impl Channel {
+    pub fn all() -> Vec<Channel> {
+        vec![
+            Channel::Final,
+            Channel::Nighly,
+            Channel::Alpha,
+            Channel::Beta,
+        ]
+    }
+    pub fn index_of(&self) -> usize {
+        Channel::all()
+            .iter()
+            .position(|channel| channel == self)
+            .unwrap_or(0)
     }
 }
 

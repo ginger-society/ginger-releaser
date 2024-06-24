@@ -1,4 +1,6 @@
 ## Unreleased commits
+ - [eb06acb474](https://github.com/project/eb06acb47411a0d95959471a7e6d50c01b284b77) (Ginger Society Admin) feat: added support for git_url_prefix in config
+	
 ## 0.2
  - [4ef36ec5cc](https://github.com/ginger-society/ginger-releaser/commit/4ef36ec5cc8d9f5be711bddcc7fc871115e11b4d) (Ginger Society Admin) feat: refactored code , added init command
 	

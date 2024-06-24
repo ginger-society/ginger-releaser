@@ -3,6 +3,7 @@ use clap::Subcommand;
 use init::init;
 use references::update_references;
 
+mod bump;
 mod init;
 mod references;
 mod release_notes;
