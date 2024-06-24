@@ -1,4 +1,10 @@
-## 0.15.0-alpha.0
+## 0.16.0-alpha.0
+ - [c0f7e5b9e3](https://github.com/ginger-society/ginger-releaser/commit/c0f7e5b9e3bf5377f4f904b20df5127c3adce071) (Ginger Society Admin) chore: test 16
+	
+ - [ef2b4332fa](https://github.com/ginger-society/ginger-releaser/commit/ef2b4332fa599a94ed42228b1325f3293b1316e0) (Ginger Society Admin) chore : removed channel selector
+	
+ - [e99d7db1ba](https://github.com/ginger-society/ginger-releaser/commit/e99d7db1ba7691673686a9a25f039bc53d07d996) (Ginger Society Admin) chore: version bump to 0.15.0-alpha.0
+	
  - [38ea4d0559](https://github.com/ginger-society/ginger-releaser/commit/38ea4d05598bc618b99fd37dd4ac1d987c581d04) (Ginger Society Admin) chore: version bump to 0.14.0-alpha.0
 	
  - [57c102752b](https://github.com/ginger-society/ginger-releaser/commit/57c102752b0dcd5a24ee7ba342ec1e22440ef47e) (Ginger Society Admin) chore: version bump to 0.13.0-alpha.0
@@ -45,6 +51,9 @@
  - [035ad5c1e7](https://github.com/ginger-society/ginger-releaser/commit/035ad5c1e73bf6a438dfad2230b44a858cfc2f23) (Ginger Society Admin) chore: test 10
 	
 ## 0.3.0-nightly.0
+## 0.15.0-alpha.0
+ - [e99d7db1ba](https://github.com/ginger-society/ginger-releaser/commit/e99d7db1ba7691673686a9a25f039bc53d07d996) (Ginger Society Admin) chore: version bump to 0.15.0-alpha.0
+	
 ## 0.14.0-alpha.0
  - [38ea4d0559](https://github.com/ginger-society/ginger-releaser/commit/38ea4d05598bc618b99fd37dd4ac1d987c581d04) (Ginger Society Admin) chore: version bump to 0.14.0-alpha.0
 	
