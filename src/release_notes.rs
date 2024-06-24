@@ -29,7 +29,11 @@ pub fn generate_release_notes(
         }
     }
 
-    sorted_tags.sort_by(|a, b| b.cmp(a));
+    sorted_tags.sort_by(|a, b| {
+        let semver_a = Version::from_str(a);
+        let semver_b = Version::from_str(b);
+        semver_b.cmp(&semver_a)
+    });
 
     // Iterate over tags and collect commit messages
     for (i, tag_name) in sorted_tags.iter().enumerate() {

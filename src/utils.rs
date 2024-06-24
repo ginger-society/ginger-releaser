@@ -1,7 +1,7 @@
 use regex::Regex;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::{error::Error, fmt, fs, path::Path};
+use std::{cmp::Ordering, error::Error, fmt, fs, path::Path, process::exit};
 
 #[derive(Debug)]
 pub enum FileType {
@@ -32,7 +32,7 @@ impl fmt::Display for FileType {
         }
     }
 }
-#[derive(Debug, Deserialize, Serialize, Clone, Copy, PartialEq)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy, PartialEq, Eq, Ord, PartialOrd)]
 pub enum Channel {
     Final,
     Nightly, // Also known as Dev branch
@@ -66,7 +66,19 @@ impl Channel {
     }
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone, Copy)]
+impl From<&str> for Channel {
+    fn from(channel: &str) -> Self {
+        match channel {
+            "nightly" => Channel::Nightly,
+            "alpha" => Channel::Alpha,
+            "beta" => Channel::Beta,
+            "final" => Channel::Final,
+            _ => exit(1),
+        }
+    }
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, Copy, Eq)]
 pub struct Version {
     pub channel: Channel,
     pub major: u32,
@@ -95,8 +107,54 @@ impl Version {
             self.major, self.minor, self.patch, self.channel, self.revision
         )
     }
+
+    pub fn from_str(version: &str) -> Self {
+        let parts: Vec<&str> = version.split(|c| c == '.' || c == '-').collect();
+        let major = parts[0].parse().unwrap_or(0);
+        let minor = parts[1].parse().unwrap_or(0);
+        let patch = parts[2].parse().unwrap_or(0);
+        let (channel, revision) = if parts.len() > 3 {
+            (Channel::from(parts[3]), parts[4].parse().unwrap_or(0))
+        } else {
+            (Channel::Final, 0)
+        };
+
+        Version {
+            major,
+            minor,
+            patch,
+            channel,
+            revision,
+        }
+    }
 }
 
+impl Ord for Version {
+    fn cmp(&self, other: &Self) -> Ordering {
+        self.major
+            .cmp(&other.major)
+            .then(self.minor.cmp(&other.minor))
+            .then(self.patch.cmp(&other.patch))
+            .then(self.channel.cmp(&other.channel))
+            .then(self.revision.cmp(&other.revision))
+    }
+}
+
+impl PartialOrd for Version {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+impl PartialEq for Version {
+    fn eq(&self, other: &Self) -> bool {
+        self.major == other.major
+            && self.minor == other.minor
+            && self.patch == other.patch
+            && self.channel == other.channel
+            && self.revision == other.revision
+    }
+}
 #[derive(Debug, Serialize, Deserialize)]
 pub enum OutputType {
     String,
