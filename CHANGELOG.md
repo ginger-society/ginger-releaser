@@ -1,4 +1,9 @@
+## 6.5.0
+ - [d633d2d64e](https://github.com/ginger-society/ginger-releaser/commit/d633d2d64e805cd3e16ac03b3236ff5a640bb521) (Ginger Society Admin) feat: minor
+	
 ## 6.4.0
+ - [009dd38718](https://github.com/ginger-society/ginger-releaser/commit/009dd387182914bd1a0162c5ed69f3162f495d87) (Ginger Society Admin) chore: version bump to 6.4.0
+	
  - [b2998b9f4c](https://github.com/ginger-society/ginger-releaser/commit/b2998b9f4c68f5740ba107057c9f9fc3bae093ee) (Ginger Society Admin) feat: added cargo.lock
 	
 ## 6.3.0
