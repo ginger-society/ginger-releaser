@@ -1,4 +1,9 @@
+## 3.11.0-beta.0
+ - [8db8eb1cd9](https://github.com/ginger-society/ginger-releaser/commit/8db8eb1cd93962bb482b0a4a2796a8377240e0d5) (Ginger Society Admin) feat: updated patch number when channel changes from final to alpha
+	
 ## 3.10.0-beta.0
+ - [d548c7abca](https://github.com/ginger-society/ginger-releaser/commit/d548c7abca8b15364d9c9f25aa70017c8fb2e03d) (Ginger Society Admin) chore: version bump to 3.10.0-beta.0
+	
 ## 3.9.0-beta.0
  - [5764eedcf0](https://github.com/ginger-society/ginger-releaser/commit/5764eedcf0840680aac39911217bfba6817b8279) (Ginger Society Admin) chore: version bump to 3.9.0-beta.0
 	
