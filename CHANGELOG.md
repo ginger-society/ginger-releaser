@@ -1,5 +1,10 @@
 ## Unreleased commits
- - [38c1cfbdac](https://github.com/project/38c1cfbdac81a6f43e953fc684930716e854351e) (Ginger Society Admin) chore: test 9
+ - [035ad5c1e7](https://github.com/project/035ad5c1e73bf6a438dfad2230b44a858cfc2f23) (Ginger Society Admin) chore: test 10
+	
+## 0.3.0-nightly.0
+ - [3fa6dd5ff7](https://github.com/ginger-society/ginger-releaser/commit/3fa6dd5ff74abf00f6beb663fe9100cfe95defb7) (Ginger Society Admin) chore: version bump to 0.3.0-nightly.0
+	
+ - [38c1cfbdac](https://github.com/ginger-society/ginger-releaser/commit/38c1cfbdac81a6f43e953fc684930716e854351e) (Ginger Society Admin) chore: test 9
 	
 ## 0.1.0-nightly.0
  - [c43b9a9603](https://github.com/ginger-society/ginger-releaser/commit/c43b9a960314a779b1a465f863708dfe7a0fd9d5) (Ginger Society Admin) chore: version bump to 0.1.0-nightly.0
