@@ -60,7 +60,6 @@ fn main() {
                 Ok(_) => {
                     println!("Generated release notes successfully");
 
-                    // Create a commit with chore: version bump to {version.formatted()}
                     let commit_message =
                         format!("chore: version bump to {}", config.version.formatted());
                     let status = Command::new("git")
