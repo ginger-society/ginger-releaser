@@ -1,3 +1,18 @@
+## 7.1.0-beta.0
+ - [868c78669e](https://github.com/ginger-society/ginger-releaser/commit/868c78669ee1c3bbea5aceaba158d2b0c1961ea3) (Ginger Society Admin) chore: version bump to 7.1.0-beta.0
+	
+ - [df0f9cf08e](https://github.com/ginger-society/ginger-releaser/commit/df0f9cf08e9c2de21c3ad0c53084e729fd809d37) (Ginger Society Admin) chore: cleanup
+	
+ - [6d9c16ab13](https://github.com/ginger-society/ginger-releaser/commit/6d9c16ab131a5c14b89dc965ef2bd89b9584b712) (Ginger Society Admin) feat: added git commit and tagging step
+	
+ - [87c08fa903](https://github.com/ginger-society/ginger-releaser/commit/87c08fa9038dde0436a5fcc3580bcd920e7685ce) (Ginger Society Admin) fix: minor fixes
+	
+ - [a176acfeea](https://github.com/ginger-society/ginger-releaser/commit/a176acfeea38e79fdb976e268acabb9c9edf5f0f) (Ginger Society Admin) feat: added bump command
+	
+ - [9afe99ebe5](https://github.com/ginger-society/ginger-releaser/commit/9afe99ebe59cc211d027bfc4681e1857cb735082) (Ginger Society Admin) feat: added BumpVersion function
+	
+ - [eb06acb474](https://github.com/ginger-society/ginger-releaser/commit/eb06acb47411a0d95959471a7e6d50c01b284b77) (Ginger Society Admin) feat: added support for git_url_prefix in config
+	
 ## 0.2
  - [4ef36ec5cc](https://github.com/ginger-society/ginger-releaser/commit/4ef36ec5cc8d9f5be711bddcc7fc871115e11b4d) (Ginger Society Admin) feat: refactored code , added init command
 	
