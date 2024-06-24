@@ -1,3 +1,8 @@
+## 7.4.0-beta.0
+ - [6d0e54969c](https://github.com/ginger-society/ginger-releaser/commit/6d0e54969c1022fbc983074566552fe5c8c21d8a) (Ginger Society Admin) chore: version bump to 7.4.0-beta.0
+	
+ - [888612d999](https://github.com/ginger-society/ginger-releaser/commit/888612d999b20dd5e35ff6f210bee4419fe0d0a2) (Ginger Society Admin) chore: debug test
+	
 ## 7.3.0-beta.0
  - [ba716f60a0](https://github.com/ginger-society/ginger-releaser/commit/ba716f60a04681fd5184722c76e65fe9660142e5) (Ginger Society Admin) chore: version bump to 7.3.0-beta.0
 	
