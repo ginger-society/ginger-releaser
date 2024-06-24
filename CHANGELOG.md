@@ -1,4 +1,7 @@
+## 0.10.0-alpha.0
 ## 0.9.0-alpha.0
+ - [654aa6ed7b](https://github.com/ginger-society/ginger-releaser/commit/654aa6ed7ba9b1805f7de2bc7978972db922fa10) (Ginger Society Admin) chore: version bump to 0.9.0-alpha.0
+	
  - [0ee0af89b6](https://github.com/ginger-society/ginger-releaser/commit/0ee0af89b6ee0b3abb1458b97c0b81dbbe51b236) (Ginger Society Admin) chore: version bump to 0.8.0-alpha.0
 	
 ## 0.8.0-nightly.0
