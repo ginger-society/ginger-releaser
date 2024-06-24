@@ -1,7 +1,15 @@
 use regex::Regex;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::{cmp::Ordering, error::Error, fmt, fs, path::Path, process::exit};
+use std::{
+    cmp::Ordering,
+    error::Error,
+    fmt, fs,
+    path::Path,
+    process::{exit, Command},
+};
+
+use crate::{references::update_references, release_notes};
 
 #[derive(Debug)]
 pub enum FileType {
@@ -267,4 +275,43 @@ pub fn write_config(file_path: &str, config: &Config) -> Result<(), Box<dyn Erro
     let toml_str = toml::to_string(config)?;
     fs::write(file_path, toml_str)?;
     Ok(())
+}
+
+pub fn update_project_source(config: &Config) {
+    update_references(&config);
+    match release_notes::generate_release_notes(&config.settings.git_url_prefix, config.version) {
+        Err(e) => {
+            println!("Unable to generate {:?}", e);
+        }
+        Ok(_) => {
+            println!("Generated release notes successfully");
+
+            let commit_message = format!("chore: version bump to {}", config.version.formatted());
+            let status = Command::new("git")
+                .arg("commit")
+                .arg("-am")
+                .arg(&commit_message)
+                .status()
+                .expect("Failed to commit version bump");
+            if !status.success() {
+                println!("Failed to create commit");
+                return;
+            }
+
+            // Create a tag with the version
+            let tag_name = config.version.formatted();
+            let status = Command::new("git")
+                .arg("tag")
+                .arg(&tag_name)
+                .status()
+                .expect("Failed to create tag");
+
+            if !status.success() {
+                println!("Failed to create tag");
+                return;
+            }
+
+            println!("Version bumped to {}, commit and tag created", tag_name);
+        }
+    };
 }

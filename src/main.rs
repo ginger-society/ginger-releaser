@@ -2,7 +2,7 @@ use bump::{bump_channel, bump_version, BumpType};
 use clap::{Parser, Subcommand};
 use init::init;
 use references::update_references;
-use utils::{read_config, write_config};
+use utils::{read_config, update_project_source, write_config};
 
 use std::process::Command;
 
@@ -51,51 +51,13 @@ fn main() {
             let mut config = read_config(file_path).unwrap();
             bump_channel(&mut config.version);
             write_config(file_path, &config).unwrap();
+            update_project_source(&config)
         }
         Commands::Release { bump_type } => {
             let mut config = read_config(file_path).unwrap();
             bump_version(bump_type, &mut config.version);
             write_config(file_path, &config).unwrap();
-            update_references(&config);
-            match release_notes::generate_release_notes(
-                &config.settings.git_url_prefix,
-                config.version,
-            ) {
-                Err(e) => {
-                    println!("Unable to generate {:?}", e);
-                }
-                Ok(_) => {
-                    println!("Generated release notes successfully");
-
-                    let commit_message =
-                        format!("chore: version bump to {}", config.version.formatted());
-                    let status = Command::new("git")
-                        .arg("commit")
-                        .arg("-am")
-                        .arg(&commit_message)
-                        .status()
-                        .expect("Failed to commit version bump");
-                    if !status.success() {
-                        println!("Failed to create commit");
-                        return;
-                    }
-
-                    // Create a tag with the version
-                    let tag_name = config.version.formatted();
-                    let status = Command::new("git")
-                        .arg("tag")
-                        .arg(&tag_name)
-                        .status()
-                        .expect("Failed to create tag");
-
-                    if !status.success() {
-                        println!("Failed to create tag");
-                        return;
-                    }
-
-                    println!("Version bumped to {}, commit and tag created", tag_name);
-                }
-            };
+            update_project_source(&config)
         }
     }
 }
