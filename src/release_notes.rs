@@ -100,8 +100,9 @@ pub fn generate_release_notes(
             let message = commit.message().unwrap_or_default();
 
             let formatted_message = format!(
-                " - [{}](https://github.com/project/{}) ({}) {}\n",
+                " - [{}]({}{}) ({}) {}\n",
                 &commit_hash[..10],
+                git_url_prefix,
                 commit_hash,
                 author.name().unwrap_or_default(),
                 message.replace("\n", "\n\t")
