@@ -24,15 +24,16 @@ This has many sub commands.
 a. major
 b. minor
 c. patch
-d. channel
-    This is interactive as it will ask you to choose the new channel to switch to. The options are 
-        1. Final <-- this is for the prod release
-        2. Alpha
-        3. Beta
-        4. Nighly <-- this is like dev changes on daily basis
 e. revision
 
 This should be called when we have a merge request to a specific branch. 
 
-Test change 13
 
+```sh
+ginger-releaser bump ?
+```
+When initialized the project is in nightly release. Everytime you `bump` it. It will go to next version. Nightly -> Alpha -> Beta -> Final 
+
+Once the project is in Final stage, you should user major/minor/patch releases. 
+
+The philosiphy here is that once a product is released. You can not make breaking changes. Every version after 1.0.0 should always be in release state with all scenarios covered. 
