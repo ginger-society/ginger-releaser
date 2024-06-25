@@ -120,16 +120,41 @@ pub fn generate_release_notes(
 
     match File::create("CHANGELOG.md") {
         Ok(mut release_notes_file) => {
-            for (tag_name, notes) in release_notes.iter() {
-                match write!(release_notes_file, "## {}\n", tag_name) {
-                    Ok(()) => {}
-                    Err(_) => exit(0),
-                };
-                for note in notes {
-                    match write!(release_notes_file, "{}", note) {
+            match release_notes.get(&version.formatted()) {
+                Some(notes) => {
+                    match write!(
+                        release_notes_file,
+                        "## {}\n",
+                        String::from(version.formatted())
+                    ) {
                         Ok(()) => {}
                         Err(_) => exit(0),
                     };
+                    for note in notes {
+                        match write!(release_notes_file, "{}", note) {
+                            Ok(()) => {}
+                            Err(_) => exit(0),
+                        };
+                    }
+                }
+                None => {}
+            }
+
+            for tag_name in sorted_tags.iter() {
+                match release_notes.get(tag_name) {
+                    Some(notes) => {
+                        match write!(release_notes_file, "## {}\n", tag_name) {
+                            Ok(()) => {}
+                            Err(_) => exit(0),
+                        };
+                        for note in notes {
+                            match write!(release_notes_file, "{}", note) {
+                                Ok(()) => {}
+                                Err(_) => exit(0),
+                            };
+                        }
+                    }
+                    None => {}
                 }
             }
         }
