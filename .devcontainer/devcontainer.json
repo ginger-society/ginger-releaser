@@ -1,0 +1,17 @@
+{
+  "name": "Rust",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "releaser",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "1YiB.rust-bundle",
+        "dustypomerleau.rust-syntax",
+        "serayuzgur.crates",
+        "tamasfe.even-better-toml"
+      ]
+    }
+  }
+}
