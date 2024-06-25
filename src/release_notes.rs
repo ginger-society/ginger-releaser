@@ -171,7 +171,7 @@ pub fn generate_release_notes(
                     };
 
                     for (section_heading, section_notes) in notes.iter() {
-                        match write!(release_notes_file, "{}", section_heading) {
+                        match write!(release_notes_file, "{}\n", section_heading) {
                             Ok(()) => {}
                             Err(_) => exit(0),
                         };
@@ -199,7 +199,7 @@ pub fn generate_release_notes(
                             Err(_) => exit(0),
                         };
                         for (section_heading, section_notes) in notes.iter() {
-                            match write!(release_notes_file, "{}", section_heading) {
+                            match write!(release_notes_file, "{}\n", section_heading) {
                                 Ok(()) => {}
                                 Err(_) => exit(0),
                             };
