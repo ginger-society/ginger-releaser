@@ -31,7 +31,7 @@ pub fn bump_version(bump_type: BumpType, version: &mut Version) -> &mut Version 
         }
         BumpType::Revision => match version.channel {
             Channel::Final => {
-                println!("You can change revision once a project is in Final stage. Existing");
+                println!("You can't change revision once a project is in Final stage. Existing");
                 exit(1)
             }
             _ => version.revision += 1,
