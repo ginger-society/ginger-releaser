@@ -1,3 +1,8 @@
+## 8.3.0 (2024-06-25)
+ - [15e66d0835](https://github.com/ginger-society/ginger-releaser/commit/15e66d08354b4598c16e7ba036e04f8079bcf0d4) (Ginger Society Admin) chore: version bump to 8.3.0
+	
+ - [08c6587fb6](https://github.com/ginger-society/ginger-releaser/commit/08c6587fb616b0834b02bb1492359b2d831e456f) (Ginger Society Admin) feat: added dev container support , added build, install and setup scripts
+	
 ## 8.2.3 (2024-06-24)
  - [fb5df6abec](https://github.com/ginger-society/ginger-releaser/commit/fb5df6abecf9bf036c27d21658ed34aa386104cc) (Ginger Society Admin) chore: version bump to 8.2.3
 	
