@@ -18,10 +18,13 @@ pub fn generate_release_notes(
     for tag in repo.tag_names(None)?.iter() {
         match tag {
             Some(version) => {
-                tags.insert(
-                    version.to_string().clone(),
-                    repo.refname_to_id(format!("refs/tags/{}", &version).as_str())?,
-                );
+                let tag_id = repo.refname_to_id(format!("refs/tags/{}", &version).as_str())?;
+                tags.insert(version.to_string().clone(), tag_id);
+
+                // Get tag date
+                let tag_date = repo.find_commit(tag_id)?.time().seconds();
+                let tag_datetime = chrono::NaiveDateTime::from_timestamp(tag_date, 0);
+
                 sorted_tags.push(version.to_string().clone());
                 release_notes.insert(version.to_string().clone(), Vec::new());
             }
