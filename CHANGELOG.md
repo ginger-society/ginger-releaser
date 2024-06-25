@@ -1,4 +1,9 @@
-## 8.9.0
+## 8.10.0 - 2024-06-25
+ - [fc1b03047c](https://github.com/ginger-society/ginger-releaser/commit/fc1b03047c5ad0b63b4feb43f7d40d588a7cbe5d) (Ginger Society Admin) feat: added current date to the first section
+	
+## 8.9.0 - 2024-06-25
+ - [e8617746ae](https://github.com/ginger-society/ginger-releaser/commit/e8617746ae6cdd535637f50ee90d7d46f87400bc) (Ginger Society Admin) chore: version bump to 8.9.0
+	
 ## 8.8.0 - 2024-06-25
  - [072789a487](https://github.com/ginger-society/ginger-releaser/commit/072789a487924ebfa1aed8d8c241fba6893d15bf) (Ginger Society Admin) chore: version bump to 8.8.0
 	
