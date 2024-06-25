@@ -30,9 +30,9 @@ This should be called when we have a merge request to a specific branch.
 
 
 ```sh
-ginger-releaser bump ?
+ginger-releaser bump
 ```
-When initialized the project is in nightly release. Everytime you `bump` it. It will go to next version. Nightly -> Alpha -> Beta -> Final 
+When initialized the project is in nightly release. Everytime you `bump` it. It will go to next channel. Nightly -> Alpha -> Beta -> Final 
 
 Once the project is in Final stage, you should user major/minor/patch releases. 
 

@@ -29,7 +29,13 @@ pub fn bump_version(bump_type: BumpType, version: &mut Version) -> &mut Version 
             version.patch += 1;
             version.revision = 0;
         }
-        BumpType::Revision => version.revision += 1,
+        BumpType::Revision => match version.channel {
+            Channel::Final => {
+                println!("You can change revision once a project is in Final stage. Existing");
+                exit(1)
+            }
+            _ => version.revision += 1,
+        },
     }
 
     version
