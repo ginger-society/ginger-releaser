@@ -13,7 +13,7 @@ pub fn generate_release_notes(
 ) -> Result<(), git2::Error> {
     let repo = Repository::open(".")?;
     let mut tags: HashMap<String, Oid> = HashMap::new();
-    let mut release_notes: HashMap<String, Vec<String>> = HashMap::new();
+    let mut release_notes: HashMap<String, HashMap<String, Vec<String>>> = HashMap::new();
     let mut tag_dates: HashMap<String, String> = HashMap::new();
     let mut sorted_tags: Vec<String> = vec![];
     // Get all tags in the repository and filter by semantic versioning
@@ -31,7 +31,7 @@ pub fn generate_release_notes(
                     tag_datetime.unwrap().date_naive().to_string(),
                 );
                 sorted_tags.push(version.to_string().clone());
-                release_notes.insert(version.to_string().clone(), Vec::new());
+                release_notes.insert(version.to_string().clone(), HashMap::new());
             }
             None => {}
         }
@@ -46,7 +46,7 @@ pub fn generate_release_notes(
     // Iterate over tags and collect commit messages
     for (i, tag_name) in sorted_tags.iter().enumerate() {
         let mut revwalk = repo.revwalk()?;
-        let mut commit_messages = Vec::new();
+        // let mut commit_messages: HashMap<String, Vec<String>> = HashMap::new();
 
         if i < sorted_tags.len() - 1 {
             let next_tag_name = &sorted_tags[i + 1];
@@ -68,6 +68,13 @@ pub fn generate_release_notes(
             let commit_hash = commit.id().to_string();
             let author = commit.author();
             let message = commit.message().unwrap_or_default();
+
+            let prefix = message
+                .split_whitespace()
+                .next()
+                .unwrap_or_default()
+                .to_string();
+
             let formatted_message = format!(
                 " - [{}]({}{}) ({}) {}\n",
                 &commit_hash[..10],
@@ -77,13 +84,23 @@ pub fn generate_release_notes(
                 message.replace("\n", "\n\t")
             );
 
-            commit_messages.push(formatted_message);
-        }
+            // commit_messages
+            //     .get_mut(&prefix)
+            //     .unwrap()
+            //     .push(formatted_message);
 
-        release_notes
-            .get_mut(tag_name)
-            .unwrap()
-            .extend(commit_messages);
+            // release_notes
+            //     .entry(tag_name)
+            //     .or_insert_with(Vec::new)
+            //     .push(formatted_message);
+
+            release_notes
+                .entry(tag_name.clone())
+                .or_insert_with(HashMap::new)
+                .entry(prefix)
+                .or_insert_with(Vec::new)
+                .push(formatted_message);
+        }
     }
 
     // Collect commits since the last tag under "Unreleased commits"
@@ -102,7 +119,7 @@ pub fn generate_release_notes(
         let end_commit = repo.find_commit(*tags.get(&last_tag_name).unwrap())?;
         revwalk.push(last_commit.id())?;
         revwalk.hide(end_commit.id())?;
-        let mut commit_messages = Vec::new();
+        // let mut commit_messages = Vec::new();
 
         for commit_id in revwalk {
             let commit_id = commit_id?;
@@ -110,7 +127,11 @@ pub fn generate_release_notes(
             let commit_hash = commit.id().to_string();
             let author = commit.author();
             let message = commit.message().unwrap_or_default();
-
+            let prefix = message
+                .split_whitespace()
+                .next()
+                .unwrap_or_default()
+                .to_string();
             let formatted_message = format!(
                 " - [{}]({}{}) ({}) {}\n",
                 &commit_hash[..10],
@@ -120,10 +141,17 @@ pub fn generate_release_notes(
                 message.replace("\n", "\n\t")
             );
 
-            commit_messages.push(formatted_message);
+            release_notes
+                .entry(version.formatted())
+                .or_insert_with(HashMap::new)
+                .entry(prefix)
+                .or_insert_with(Vec::new)
+                .push(formatted_message);
+
+            // commit_messages.push(formatted_message);
         }
 
-        release_notes.insert(String::from(version.formatted()), commit_messages);
+        // release_notes.insert(String::from(version.formatted()), commit_messages);
     }
 
     match File::create("CHANGELOG.md") {
@@ -141,11 +169,18 @@ pub fn generate_release_notes(
                         Ok(()) => {}
                         Err(_) => exit(0),
                     };
-                    for note in notes {
-                        match write!(release_notes_file, "{}", note) {
+
+                    for (section_heading, section_notes) in notes.iter() {
+                        match write!(release_notes_file, "{}", section_heading) {
                             Ok(()) => {}
                             Err(_) => exit(0),
                         };
+                        for note in section_notes {
+                            match write!(release_notes_file, "{}", note) {
+                                Ok(()) => {}
+                                Err(_) => exit(0),
+                            };
+                        }
                     }
                 }
                 None => {}
@@ -163,11 +198,17 @@ pub fn generate_release_notes(
                             Ok(()) => {}
                             Err(_) => exit(0),
                         };
-                        for note in notes {
-                            match write!(release_notes_file, "{}", note) {
+                        for (section_heading, section_notes) in notes.iter() {
+                            match write!(release_notes_file, "{}", section_heading) {
                                 Ok(()) => {}
                                 Err(_) => exit(0),
                             };
+                            for note in section_notes {
+                                match write!(release_notes_file, "{}", note) {
+                                    Ok(()) => {}
+                                    Err(_) => exit(0),
+                                };
+                            }
                         }
                     }
                     None => {}
