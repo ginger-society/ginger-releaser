@@ -13,6 +13,7 @@ pub fn generate_release_notes(
     let repo = Repository::open(".")?;
     let mut tags: HashMap<String, Oid> = HashMap::new();
     let mut release_notes: HashMap<String, Vec<String>> = HashMap::new();
+    let mut tag_dates: HashMap<String, String> = HashMap::new();
     let mut sorted_tags: Vec<String> = vec![];
     // Get all tags in the repository and filter by semantic versioning
     for tag in repo.tag_names(None)?.iter() {
@@ -24,7 +25,7 @@ pub fn generate_release_notes(
                 // Get tag date
                 let tag_date = repo.find_commit(tag_id)?.time().seconds();
                 let tag_datetime = chrono::NaiveDateTime::from_timestamp(tag_date, 0);
-
+                tag_dates.insert(version.to_string().clone(), tag_datetime.date().to_string());
                 sorted_tags.push(version.to_string().clone());
                 release_notes.insert(version.to_string().clone(), Vec::new());
             }
@@ -128,7 +129,7 @@ pub fn generate_release_notes(
                     match write!(
                         release_notes_file,
                         "## {}\n",
-                        String::from(version.formatted())
+                        String::from(version.formatted()),
                     ) {
                         Ok(()) => {}
                         Err(_) => exit(0),
@@ -146,7 +147,12 @@ pub fn generate_release_notes(
             for tag_name in sorted_tags.iter() {
                 match release_notes.get(tag_name) {
                     Some(notes) => {
-                        match write!(release_notes_file, "## {}\n", tag_name) {
+                        match write!(
+                            release_notes_file,
+                            "## {} - {}\n",
+                            tag_name,
+                            tag_dates.get(tag_name).unwrap()
+                        ) {
                             Ok(()) => {}
                             Err(_) => exit(0),
                         };
