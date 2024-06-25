@@ -1,3 +1,4 @@
+use chrono::Utc;
 use git2::{Oid, Repository};
 use std::collections::HashMap;
 use std::fs::File;
@@ -24,8 +25,11 @@ pub fn generate_release_notes(
 
                 // Get tag date
                 let tag_date = repo.find_commit(tag_id)?.time().seconds();
-                let tag_datetime = chrono::NaiveDateTime::from_timestamp(tag_date, 0);
-                tag_dates.insert(version.to_string().clone(), tag_datetime.date().to_string());
+                let tag_datetime = chrono::DateTime::from_timestamp(tag_date, 0);
+                tag_dates.insert(
+                    version.to_string().clone(),
+                    tag_datetime.unwrap().date_naive().to_string(),
+                );
                 sorted_tags.push(version.to_string().clone());
                 release_notes.insert(version.to_string().clone(), Vec::new());
             }
@@ -126,10 +130,13 @@ pub fn generate_release_notes(
         Ok(mut release_notes_file) => {
             match release_notes.get(&version.formatted()) {
                 Some(notes) => {
+                    let current_date_time = Utc::now();
+
                     match write!(
                         release_notes_file,
-                        "## {}\n",
+                        "## {} - {}\n",
                         String::from(version.formatted()),
+                        current_date_time.date_naive()
                     ) {
                         Ok(()) => {}
                         Err(_) => exit(0),
