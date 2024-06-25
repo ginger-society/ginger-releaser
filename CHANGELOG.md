@@ -1,20 +1,26 @@
+## 8.17.1 - 2024-06-25
+chore:
+ - [5384c4d7df](https://github.com/ginger-society/ginger-releaser/commit/5384c4d7df74b2335df3db9edf33b4ae6f2034a9) (Ginger Society Admin) chore: readme update
+	
 ## 8.17.0 - 2024-06-25
 chore:
+ - [7166ee2313](https://github.com/ginger-society/ginger-releaser/commit/7166ee23137abd3e587657e4ee4a018748cc7ffe) (Ginger Society Admin) chore: version bump to 8.17.0
+	
  - [6aa1a952a3](https://github.com/ginger-society/ginger-releaser/commit/6aa1a952a32900c19915897a330c01030868b56b) (Ginger Society Admin) chore: minor formatting change
 	
 ## 8.16.0 - 2024-06-25
-feat:
- - [1295b2ca99](https://github.com/ginger-society/ginger-releaser/commit/1295b2ca996eb9aa66517f48e8e395967c4bce61) (Ginger Society Admin) feat: added sections to group similar changes based on commitlint prefix
-	
 chore:
  - [8f03ed1fc9](https://github.com/ginger-society/ginger-releaser/commit/8f03ed1fc99e81352f2ad528c561c59049ed6902) (Ginger Society Admin) chore: version bump to 8.16.0
 	
-## 8.10.0 - 2024-06-25
 feat:
- - [fc1b03047c](https://github.com/ginger-society/ginger-releaser/commit/fc1b03047c5ad0b63b4feb43f7d40d588a7cbe5d) (Ginger Society Admin) feat: added current date to the first section
+ - [1295b2ca99](https://github.com/ginger-society/ginger-releaser/commit/1295b2ca996eb9aa66517f48e8e395967c4bce61) (Ginger Society Admin) feat: added sections to group similar changes based on commitlint prefix
 	
+## 8.10.0 - 2024-06-25
 chore:
  - [b0c19ba20f](https://github.com/ginger-society/ginger-releaser/commit/b0c19ba20fe9b3fa6856cbbe9da5c6e0f6b928fa) (Ginger Society Admin) chore: version bump to 8.10.0
+	
+feat:
+ - [fc1b03047c](https://github.com/ginger-society/ginger-releaser/commit/fc1b03047c5ad0b63b4feb43f7d40d588a7cbe5d) (Ginger Society Admin) feat: added current date to the first section
 	
 ## 8.9.0 - 2024-06-25
 chore:
@@ -50,11 +56,11 @@ feat:
  - [236fcb4558](https://github.com/ginger-society/ginger-releaser/commit/236fcb45583ebe79c317b977570540e7981bef67) (Ginger Society Admin) feat: test changes
 	
 ## 8.3.0 - 2024-06-25
-feat:
- - [08c6587fb6](https://github.com/ginger-society/ginger-releaser/commit/08c6587fb616b0834b02bb1492359b2d831e456f) (Ginger Society Admin) feat: added dev container support , added build, install and setup scripts
-	
 chore:
  - [15e66d0835](https://github.com/ginger-society/ginger-releaser/commit/15e66d08354b4598c16e7ba036e04f8079bcf0d4) (Ginger Society Admin) chore: version bump to 8.3.0
+	
+feat:
+ - [08c6587fb6](https://github.com/ginger-society/ginger-releaser/commit/08c6587fb616b0834b02bb1492359b2d831e456f) (Ginger Society Admin) feat: added dev container support , added build, install and setup scripts
 	
 ## 8.2.3 - 2024-06-24
 chore:
@@ -89,11 +95,11 @@ chore:
  - [5dc13f6a0b](https://github.com/ginger-society/ginger-releaser/commit/5dc13f6a0b1ac6a34b3bd41aedd812f05e23bb80) (Ginger Society Admin) chore: version bump to 7.1.0
 	
 ## 7.0.0 - 2024-06-24
-feat:
- - [1154c3b31f](https://github.com/ginger-society/ginger-releaser/commit/1154c3b31fc11919f91a7c80810e25f42cf8f97b) (Ginger Society Admin) feat: cleanup
-	
 chore:
  - [b090d20dc1](https://github.com/ginger-society/ginger-releaser/commit/b090d20dc1d8a2518e92c348dbf50cf148f6eabd) (Ginger Society Admin) chore: version bump to 7.0.0
+	
+feat:
+ - [1154c3b31f](https://github.com/ginger-society/ginger-releaser/commit/1154c3b31fc11919f91a7c80810e25f42cf8f97b) (Ginger Society Admin) feat: cleanup
 	
 ## 6.7.1-beta.0 - 2024-06-24
 chore:
@@ -109,11 +115,11 @@ chore:
  - [c4023c3852](https://github.com/ginger-society/ginger-releaser/commit/c4023c385252ed0a3af242c7b9e27acfe6787628) (Ginger Society Admin) chore: version bump to 6.7.0
 	
 ## 6.6.0 - 2024-06-24
-feat:
- - [78e53a18fe](https://github.com/ginger-society/ginger-releaser/commit/78e53a18fe082b2230202f331c69b794692669f4) (Ginger Society Admin) feat: minor
-	
 chore:
  - [df76262bc9](https://github.com/ginger-society/ginger-releaser/commit/df76262bc978843c05f58220e1e7f3e70d935a77) (Ginger Society Admin) chore: version bump to 6.6.0
+	
+feat:
+ - [78e53a18fe](https://github.com/ginger-society/ginger-releaser/commit/78e53a18fe082b2230202f331c69b794692669f4) (Ginger Society Admin) feat: minor
 	
 ## 6.5.0 - 2024-06-24
 chore:
@@ -123,18 +129,18 @@ feat:
  - [d633d2d64e](https://github.com/ginger-society/ginger-releaser/commit/d633d2d64e805cd3e16ac03b3236ff5a640bb521) (Ginger Society Admin) feat: minor
 	
 ## 6.4.0 - 2024-06-24
-chore:
- - [009dd38718](https://github.com/ginger-society/ginger-releaser/commit/009dd387182914bd1a0162c5ed69f3162f495d87) (Ginger Society Admin) chore: version bump to 6.4.0
-	
 feat:
  - [b2998b9f4c](https://github.com/ginger-society/ginger-releaser/commit/b2998b9f4c68f5740ba107057c9f9fc3bae093ee) (Ginger Society Admin) feat: added cargo.lock
 	
-## 6.3.0 - 2024-06-24
 chore:
- - [eea1d263b9](https://github.com/ginger-society/ginger-releaser/commit/eea1d263b964cbed9543401107be42f7b81492ab) (Ginger Society Admin) chore: version bump to 6.3.0
+ - [009dd38718](https://github.com/ginger-society/ginger-releaser/commit/009dd387182914bd1a0162c5ed69f3162f495d87) (Ginger Society Admin) chore: version bump to 6.4.0
 	
+## 6.3.0 - 2024-06-24
 feat:
  - [e5b1fdcc22](https://github.com/ginger-society/ginger-releaser/commit/e5b1fdcc222a607c4d1421fe534d9c0c3314a5eb) (Ginger Society Admin) feat: added Cargo.toml in references
+	
+chore:
+ - [eea1d263b9](https://github.com/ginger-society/ginger-releaser/commit/eea1d263b964cbed9543401107be42f7b81492ab) (Ginger Society Admin) chore: version bump to 6.3.0
 	
 ## 6.2.0 - 2024-06-24
 chore:
@@ -323,11 +329,11 @@ chore:
  - [7c5dd509a2](https://github.com/ginger-society/ginger-releaser/commit/7c5dd509a288d82b5c8b403895fca61fcfd1e5ae) (Ginger Society Admin) chore: cleanup
 	
 ## 3.11.0-beta.0 - 2024-06-24
-chore:
- - [9733ecec6f](https://github.com/ginger-society/ginger-releaser/commit/9733ecec6f2ed2fb4494297c2182b8205cb63ce3) (Ginger Society Admin) chore: version bump to 3.11.0-beta.0
-	
 feat:
  - [8db8eb1cd9](https://github.com/ginger-society/ginger-releaser/commit/8db8eb1cd93962bb482b0a4a2796a8377240e0d5) (Ginger Society Admin) feat: updated patch number when channel changes from final to alpha
+	
+chore:
+ - [9733ecec6f](https://github.com/ginger-society/ginger-releaser/commit/9733ecec6f2ed2fb4494297c2182b8205cb63ce3) (Ginger Society Admin) chore: version bump to 3.11.0-beta.0
 	
 ## 3.10.0-beta.0 - 2024-06-24
 chore:
@@ -442,11 +448,11 @@ chore:
  - [466ca03ebe](https://github.com/ginger-society/ginger-releaser/commit/466ca03ebed7bc8a97575e69940bc1ea1d164782) (Ginger Society Admin) chore: version bump to 1.15.0-beta.0
 	
 ## 1.14.0-beta.0 - 2024-06-24
-chore:
- - [e45b2fc42b](https://github.com/ginger-society/ginger-releaser/commit/e45b2fc42b9a55d3f619800bc3e56c455e0c0b42) (Ginger Society Admin) chore: version bump to 1.14.0-beta.0
-	
 feat:
  - [0d030439be](https://github.com/ginger-society/ginger-releaser/commit/0d030439beb1ffe08dc8aa8fddf0866eafddd45d) (Ginger Society Admin) feat: added semantic compatision of tags
+	
+chore:
+ - [e45b2fc42b](https://github.com/ginger-society/ginger-releaser/commit/e45b2fc42b9a55d3f619800bc3e56c455e0c0b42) (Ginger Society Admin) chore: version bump to 1.14.0-beta.0
 	
 ## 1.13.0-beta.0 - 2024-06-24
 chore:
@@ -509,6 +515,42 @@ chore:
  - [31eff7401f](https://github.com/ginger-society/ginger-releaser/commit/31eff7401f20aa9621d29ad8043278b289d17dd2) (Ginger Society Admin) chore: version bump to 1.0.0-alpha.0
 	
 ## 1.0.0 - 2024-06-24
+fix:
+ - [87c08fa903](https://github.com/ginger-society/ginger-releaser/commit/87c08fa9038dde0436a5fcc3580bcd920e7685ce) (Ginger Society Admin) fix: minor fixes
+	
+feat:
+ - [d33346deef](https://github.com/ginger-society/ginger-releaser/commit/d33346deef4df4e20923ca957c26b36c74a9926f) (Ginger Society Admin) feat: test 23
+	
+ - [352d9e8fd4](https://github.com/ginger-society/ginger-releaser/commit/352d9e8fd4233dbf8639308ea124da7fa2631c16) (Ginger Society Admin) feat: test 18
+	
+ - [948f15a136](https://github.com/ginger-society/ginger-releaser/commit/948f15a1363d2e520c713667445c51153f85475f) (Ginger Society Admin) feat: test3
+	
+ - [cfb11d462d](https://github.com/ginger-society/ginger-releaser/commit/cfb11d462d0c0a1d33c4bdc60976a9240a2d980e) (Ginger Society Admin) feat: updated readme
+	
+ - [6d9c16ab13](https://github.com/ginger-society/ginger-releaser/commit/6d9c16ab131a5c14b89dc965ef2bd89b9584b712) (Ginger Society Admin) feat: added git commit and tagging step
+	
+ - [a176acfeea](https://github.com/ginger-society/ginger-releaser/commit/a176acfeea38e79fdb976e268acabb9c9edf5f0f) (Ginger Society Admin) feat: added bump command
+	
+ - [9afe99ebe5](https://github.com/ginger-society/ginger-releaser/commit/9afe99ebe59cc211d027bfc4681e1857cb735082) (Ginger Society Admin) feat: added BumpVersion function
+	
+ - [eb06acb474](https://github.com/ginger-society/ginger-releaser/commit/eb06acb47411a0d95959471a7e6d50c01b284b77) (Ginger Society Admin) feat: added support for git_url_prefix in config
+	
+ - [4ef36ec5cc](https://github.com/ginger-society/ginger-releaser/commit/4ef36ec5cc8d9f5be711bddcc7fc871115e11b4d) (Ginger Society Admin) feat: refactored code , added init command
+	
+ - [f02fd70039](https://github.com/ginger-society/ginger-releaser/commit/f02fd70039c30c0be4613fc4e52bd70ab5f0911b) (Ginger Society Admin) feat: added version update util functions for json, toml and py files
+	
+ - [8b8c0de548](https://github.com/ginger-society/ginger-releaser/commit/8b8c0de548e6cfad28c87fd1f6d50fa2c91dfe29) (Ginger Society Admin) feat: added channel Enum and minor refactoring
+	
+ - [7459099760](https://github.com/ginger-society/ginger-releaser/commit/7459099760747ebe195f86718f4cf06cf5afd260) (Ginger Society Admin) feat: added util function to read config file
+	
+ - [3f59ae6241](https://github.com/ginger-society/ginger-releaser/commit/3f59ae6241373829c26c78ee2c3f3bf980cbcd05) (Ginger Society Admin) feat: changed file name from release_notes to CHANGELOG
+	
+ - [b6078ca086](https://github.com/ginger-society/ginger-releaser/commit/b6078ca0868817fd7a4794026f6e92fff9a83cb7) (Ginger Society Admin) feat: generated changelog for this project
+	
+ - [4e045159d9](https://github.com/ginger-society/ginger-releaser/commit/4e045159d983d1e797b5757d386cc0bf648a89cd) (Ginger Society Admin) feat: added readme
+	
+ - [a4a84f6fb1](https://github.com/ginger-society/ginger-releaser/commit/a4a84f6fb16ba72078a7e278ae3872f5ea6c0c73) (Ginger Society Admin) feat: initialized a git repo
+	
 chore:
  - [96cded82c3](https://github.com/ginger-society/ginger-releaser/commit/96cded82c3da8420318515eb5c95d8371536d70c) (Ginger Society Admin) chore: version bump to 1.0.0
 	
@@ -686,42 +728,6 @@ chore:
 	
  - [2062c343af](https://github.com/ginger-society/ginger-releaser/commit/2062c343aff9c67e210fcf9193a5d7cf5a34804f) (Ginger Society Admin) chore: generating changelog
 	
-feat:
- - [d33346deef](https://github.com/ginger-society/ginger-releaser/commit/d33346deef4df4e20923ca957c26b36c74a9926f) (Ginger Society Admin) feat: test 23
-	
- - [352d9e8fd4](https://github.com/ginger-society/ginger-releaser/commit/352d9e8fd4233dbf8639308ea124da7fa2631c16) (Ginger Society Admin) feat: test 18
-	
- - [948f15a136](https://github.com/ginger-society/ginger-releaser/commit/948f15a1363d2e520c713667445c51153f85475f) (Ginger Society Admin) feat: test3
-	
- - [cfb11d462d](https://github.com/ginger-society/ginger-releaser/commit/cfb11d462d0c0a1d33c4bdc60976a9240a2d980e) (Ginger Society Admin) feat: updated readme
-	
- - [6d9c16ab13](https://github.com/ginger-society/ginger-releaser/commit/6d9c16ab131a5c14b89dc965ef2bd89b9584b712) (Ginger Society Admin) feat: added git commit and tagging step
-	
- - [a176acfeea](https://github.com/ginger-society/ginger-releaser/commit/a176acfeea38e79fdb976e268acabb9c9edf5f0f) (Ginger Society Admin) feat: added bump command
-	
- - [9afe99ebe5](https://github.com/ginger-society/ginger-releaser/commit/9afe99ebe59cc211d027bfc4681e1857cb735082) (Ginger Society Admin) feat: added BumpVersion function
-	
- - [eb06acb474](https://github.com/ginger-society/ginger-releaser/commit/eb06acb47411a0d95959471a7e6d50c01b284b77) (Ginger Society Admin) feat: added support for git_url_prefix in config
-	
- - [4ef36ec5cc](https://github.com/ginger-society/ginger-releaser/commit/4ef36ec5cc8d9f5be711bddcc7fc871115e11b4d) (Ginger Society Admin) feat: refactored code , added init command
-	
- - [f02fd70039](https://github.com/ginger-society/ginger-releaser/commit/f02fd70039c30c0be4613fc4e52bd70ab5f0911b) (Ginger Society Admin) feat: added version update util functions for json, toml and py files
-	
- - [8b8c0de548](https://github.com/ginger-society/ginger-releaser/commit/8b8c0de548e6cfad28c87fd1f6d50fa2c91dfe29) (Ginger Society Admin) feat: added channel Enum and minor refactoring
-	
- - [7459099760](https://github.com/ginger-society/ginger-releaser/commit/7459099760747ebe195f86718f4cf06cf5afd260) (Ginger Society Admin) feat: added util function to read config file
-	
- - [3f59ae6241](https://github.com/ginger-society/ginger-releaser/commit/3f59ae6241373829c26c78ee2c3f3bf980cbcd05) (Ginger Society Admin) feat: changed file name from release_notes to CHANGELOG
-	
- - [b6078ca086](https://github.com/ginger-society/ginger-releaser/commit/b6078ca0868817fd7a4794026f6e92fff9a83cb7) (Ginger Society Admin) feat: generated changelog for this project
-	
- - [4e045159d9](https://github.com/ginger-society/ginger-releaser/commit/4e045159d983d1e797b5757d386cc0bf648a89cd) (Ginger Society Admin) feat: added readme
-	
- - [a4a84f6fb1](https://github.com/ginger-society/ginger-releaser/commit/a4a84f6fb16ba72078a7e278ae3872f5ea6c0c73) (Ginger Society Admin) feat: initialized a git repo
-	
 chore
  - [ef2b4332fa](https://github.com/ginger-society/ginger-releaser/commit/ef2b4332fa599a94ed42228b1325f3293b1316e0) (Ginger Society Admin) chore : removed channel selector
-	
-fix:
- - [87c08fa903](https://github.com/ginger-society/ginger-releaser/commit/87c08fa9038dde0436a5fcc3580bcd920e7685ce) (Ginger Society Admin) fix: minor fixes
 	
