@@ -40,6 +40,7 @@ impl fmt::Display for FileType {
         }
     }
 }
+
 #[derive(Debug, Deserialize, Serialize, Clone, Copy, PartialEq, Eq, Ord, PartialOrd)]
 pub enum Channel {
     Final,

@@ -1,0 +1,6 @@
+dir = "."
+lang = "Rust"
+
+[portals_refs]
+
+[services]
