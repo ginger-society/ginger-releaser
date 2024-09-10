@@ -1,16 +1,27 @@
+# First stage: Build the Rust application
 FROM rust:1-slim-bullseye
+RUN apt-get update && apt-get install -y pkg-config libssl-dev libpq-dev curl
 
-RUN apt update
-RUN apt install curl zsh nano docker.io pkg-config libssl-dev gcc-mingw-w64-x86-64 -y
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -y
+# Install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash -
+RUN apt install -y nodejs
 
-RUN rustup target add x86_64-pc-windows-gnu
-# RUN rustup target add x86_64-unknown-linux-gnu
-# RUN rustup target add x86_64-apple-darwin
-# RUN rustup target add x86_64-unknown-linux-musl
-RUN rustup target add aarch64-unknown-linux-gnu
-RUN rustup target add aarch64-apple-darwin
-# RUN rustup target add aarch64-pc-windows-msvc
-# RUN rustup target add aarch64-unknown-linux-musl
+# Install Java
+RUN apt install -y default-jdk
 
-RUN echo "zsh" >> ~/.bashrc
+# Install OpenAPI Generator CLI globally
+RUN npm install @openapitools/openapi-generator-cli -g
+
+RUN bash -c "$(curl -fsSL https://raw.githubusercontent.com/ginger-society/infra-as-code-repo/main/rust-helpers/install-all-clis.sh)"
+
+ARG GINGER_TOKEN
+ENV GINGER_TOKEN=$GINGER_TOKEN
+RUN ginger-auth token-login $GINGER_TOKEN
+
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . .
+
+RUN ginger-connector connect stage
+RUN cargo build
