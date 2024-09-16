@@ -64,12 +64,6 @@ pub fn update_json(
     Ok(contents.to_string())
 }
 
-pub fn write_config(file_path: &str, config: &ReleaserConfig) -> Result<(), Box<dyn Error>> {
-    let toml_str = toml::to_string(config)?;
-    fs::write(file_path, toml_str)?;
-    Ok(())
-}
-
 pub fn update_project_source(config: &ReleaserConfig) {
     update_references(&config);
     match release_notes::generate_release_notes(

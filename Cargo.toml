@@ -9,7 +9,7 @@ version = "8.17.3"
 [dependencies]
 chrono = "0.4.38"
 clap = {version = "4.5.7", features = ["derive"]}
-ginger-shared-rs = "0.5.0-nightly.0"
+ginger-shared-rs = "0.6.0-nightly.0"
 inquire = {version = "0.6.2", features = ["date"]}
 regex = "1.10.5"
 serde = {version = "1.0.166", features = ["derive"]}
