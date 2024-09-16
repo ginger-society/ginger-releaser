@@ -1,7 +1,8 @@
 use bump::{bump_channel, bump_version, BumpType};
 use clap::{Parser, Subcommand};
+use ginger_shared_rs::read_releaser_config_file;
 use init::init;
-use utils::{read_config, update_project_source, write_config};
+use utils::{update_project_source, write_config};
 
 mod bump;
 mod init;
@@ -45,13 +46,13 @@ fn main() {
             Ok(_) => {}
         },
         Commands::Bump => {
-            let mut config = read_config(file_path).unwrap();
+            let mut config = read_releaser_config_file(file_path).unwrap();
             bump_channel(&mut config.version);
             write_config(file_path, &config).unwrap();
             update_project_source(&config)
         }
         Commands::Release { bump_type } => {
-            let mut config = read_config(file_path).unwrap();
+            let mut config = read_releaser_config_file(file_path).unwrap();
             bump_version(bump_type, &mut config.version);
             write_config(file_path, &config).unwrap();
             update_project_source(&config)

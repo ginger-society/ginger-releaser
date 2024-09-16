@@ -1,8 +1,7 @@
 use std::process::exit;
 
 use clap::Subcommand;
-
-use crate::utils::{Channel, Version};
+use ginger_shared_rs::{Channel, Version};
 
 #[derive(Subcommand, Debug)]
 pub enum BumpType {

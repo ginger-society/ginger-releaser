@@ -1,8 +1,10 @@
 use std::fs;
 
-use crate::utils::{update_json, update_py, update_toml, Config, FileType};
+use ginger_shared_rs::{FileType, ReleaserConfig};
 
-pub fn update_references(config: &Config) {
+use crate::utils::{update_json, update_py, update_toml};
+
+pub fn update_references(config: &ReleaserConfig) {
     for reference in &config.references {
         let mut contents = fs::read_to_string(&reference.file_name).unwrap();
         let var_name = &reference.variable;

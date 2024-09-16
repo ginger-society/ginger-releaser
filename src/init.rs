@@ -3,7 +3,7 @@ use std::fs;
 use std::io::Write;
 use std::path::Path;
 
-use crate::utils::{Channel, Config, Settings, Version};
+use ginger_shared_rs::{Channel, ReleaserConfig, ReleaserSettings, Version};
 
 pub fn init(config_path: &str) -> Result<(), Box<dyn Error>> {
     if !Path::new(config_path).exists() {
@@ -15,11 +15,11 @@ pub fn init(config_path: &str) -> Result<(), Box<dyn Error>> {
             revision: 0,
         };
 
-        let initial_config = Config {
+        let initial_config = ReleaserConfig {
             version: initial_version.clone(),
             references: vec![],
-            settings: Settings {
-                git_url_prefix: String::from(""),
+            settings: ReleaserSettings {
+                git_url_prefix: Some(String::from("")),
             },
         };
 

@@ -1,11 +1,10 @@
 use chrono::Utc;
+use ginger_shared_rs::Version;
 use git2::{Oid, Repository};
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::Write;
 use std::process::exit;
-
-use crate::utils::Version;
 
 pub fn generate_release_notes(
     git_url_prefix: &String,
