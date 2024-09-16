@@ -1,7 +1,7 @@
 use ginger_shared_rs::{OutputType, ReleaserConfig, Version};
 use regex::Regex;
 use serde_json::Value;
-use std::{error::Error, fs, process::Command};
+use std::{error::Error, process::Command};
 
 use crate::{references::update_references, release_notes};
 
