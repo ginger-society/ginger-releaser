@@ -1,11 +1,11 @@
 [settings]
 git_url_prefix = "https://github.com/ginger-society/ginger-releaser/"
-take_snapshots = true
+take_snapshots = false
 
 [version]
 channel = "Final"
 major = 8
-minor = 25
+minor = 26
 patch = 0
 revision = 0
 
