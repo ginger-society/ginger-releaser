@@ -1,9 +1,12 @@
+use crate::{references::update_references, release_notes};
 use ginger_shared_rs::{OutputType, ReleaserConfig, Version};
+use inquire::{
+    ui::{Color, RenderConfig, Styled},
+    Editor,
+};
 use regex::Regex;
 use serde_json::Value;
 use std::{error::Error, process::Command};
-
-use crate::{references::update_references, release_notes};
 
 pub fn update_py(
     contents: &mut String,
@@ -64,6 +67,11 @@ pub fn update_json(
     Ok(contents.to_string())
 }
 
+fn description_render_config() -> RenderConfig {
+    RenderConfig::default()
+        .with_canceled_prompt_indicator(Styled::new("<skipped>").with_fg(Color::DarkYellow))
+}
+
 pub fn update_project_source(config: &ReleaserConfig) {
     update_references(&config);
     match release_notes::generate_release_notes(
@@ -76,7 +84,32 @@ pub fn update_project_source(config: &ReleaserConfig) {
         Ok(_) => {
             println!("Generated release notes successfully");
 
-            let commit_message = format!("chore: version bump to {}", config.version.formatted());
+            let mut notes = String::from("");
+
+            if config.settings.take_snapshots {
+                notes = Editor::new("Description:")
+                    .with_formatter(&|submission| {
+                        let char_count = submission.chars().count();
+                        if char_count == 0 {
+                            String::from("<skipped>")
+                        } else if char_count <= 20 {
+                            submission.into()
+                        } else {
+                            let mut substr: String = submission.chars().take(17).collect();
+                            substr.push_str("...");
+                            substr
+                        }
+                    })
+                    .with_render_config(description_render_config())
+                    .prompt()
+                    .unwrap();
+            }
+
+            let commit_message = format!(
+                "chore: version bump to {}\n\n {}",
+                config.version.formatted(),
+                notes
+            );
             let status = Command::new("git")
                 .arg("commit")
                 .arg("-am")

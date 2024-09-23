@@ -1,3 +1,5 @@
+use std::{fs, path::Path};
+
 use bump::{bump_channel, bump_version, BumpType};
 use clap::{Parser, Subcommand};
 use ginger_shared_rs::{read_releaser_config_file, write_releaser_config_file};
@@ -53,6 +55,7 @@ fn main() {
         }
         Commands::Release { bump_type } => {
             let mut config = read_releaser_config_file(file_path).unwrap();
+
             bump_version(bump_type, &mut config.version);
             write_releaser_config_file(file_path, &config).unwrap();
             update_project_source(&config)

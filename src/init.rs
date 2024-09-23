@@ -20,6 +20,7 @@ pub fn init(config_path: &str) -> Result<(), Box<dyn Error>> {
             references: vec![],
             settings: ReleaserSettings {
                 git_url_prefix: Some(String::from("")),
+                take_snapshots: false,
             },
         };
 

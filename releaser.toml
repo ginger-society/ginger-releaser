@@ -37,3 +37,4 @@ variable = "version"
 
 [settings]
 git_url_prefix = "https://github.com/ginger-society/ginger-releaser/"
+take_snapshots = true
