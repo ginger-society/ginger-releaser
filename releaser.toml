@@ -1,7 +1,11 @@
+[settings]
+git_url_prefix = "https://github.com/ginger-society/ginger-releaser/"
+take_snapshots = false
+
 [version]
 channel = "Final"
 major = 8
-minor = 20
+minor = 21
 patch = 0
 revision = 0
 
@@ -34,6 +38,3 @@ variable = "version"
 file_name = "Cargo.toml"
 output_type = "String"
 variable = "version"
-
-[settings]
-git_url_prefix = "https://github.com/ginger-society/ginger-releaser/"
