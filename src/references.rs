@@ -1,4 +1,4 @@
-use std::fs;
+use std::{fs, path::Path};
 
 use ginger_shared_rs::{FileType, ReleaserConfig};
 
@@ -8,7 +8,12 @@ pub fn update_references(config: &ReleaserConfig) {
     for reference in &config.references {
         let mut contents = fs::read_to_string(&reference.file_name).unwrap();
         let var_name = &reference.variable;
-        let updated_content = match reference.file_type {
+
+        let extension = Path::new(&reference.file_name)
+            .extension()
+            .and_then(|ext| ext.to_str());
+
+        let updated_content = match FileType::from_extension(extension) {
             FileType::Py => update_py(
                 &mut contents,
                 &config.version,
