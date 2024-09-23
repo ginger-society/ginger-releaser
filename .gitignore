@@ -2,3 +2,5 @@
 Cargo.lock
 bin
 .env
+MetadataService_client
+.ginger.tmp

@@ -1,15 +1,15 @@
-use std::{fs, path::Path};
-
 use bump::{bump_channel, bump_version, BumpType};
 use clap::{Parser, Subcommand};
 use ginger_shared_rs::{read_releaser_config_file, write_releaser_config_file};
 use init::init;
+use snapshot::generate_snapshot;
 use utils::update_project_source;
 
 mod bump;
 mod init;
 mod references;
 mod release_notes;
+mod snapshot;
 mod utils;
 
 #[derive(Subcommand, Debug)]
@@ -35,7 +35,8 @@ struct Args {
     command: Commands,
 }
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let args = Args::parse();
 
     let file_path = "releaser.toml"; // Update the path to your TOML file
@@ -58,7 +59,10 @@ fn main() {
 
             bump_version(bump_type.clone(), &mut config.version);
             write_releaser_config_file(file_path, &config).unwrap();
-            update_project_source(&config, bump_type == BumpType::Major)
+            update_project_source(&config, bump_type == BumpType::Major);
+            if config.settings.take_snapshots {
+                generate_snapshot(&config).await
+            }
         }
     }
 }
