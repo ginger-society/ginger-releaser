@@ -3,7 +3,7 @@ use std::process::exit;
 use clap::Subcommand;
 use ginger_shared_rs::{Channel, Version};
 
-#[derive(Subcommand, Debug)]
+#[derive(Subcommand, Debug, PartialEq, Clone)]
 pub enum BumpType {
     Major,
     Minor,

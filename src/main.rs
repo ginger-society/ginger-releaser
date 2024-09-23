@@ -51,14 +51,14 @@ fn main() {
             let mut config = read_releaser_config_file(file_path).unwrap();
             bump_channel(&mut config.version);
             write_releaser_config_file(file_path, &config).unwrap();
-            update_project_source(&config)
+            update_project_source(&config, false)
         }
         Commands::Release { bump_type } => {
             let mut config = read_releaser_config_file(file_path).unwrap();
 
-            bump_version(bump_type, &mut config.version);
+            bump_version(bump_type.clone(), &mut config.version);
             write_releaser_config_file(file_path, &config).unwrap();
-            update_project_source(&config)
+            update_project_source(&config, bump_type == BumpType::Major)
         }
     }
 }

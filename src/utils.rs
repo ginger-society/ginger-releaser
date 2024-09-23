@@ -72,7 +72,7 @@ fn description_render_config() -> RenderConfig {
         .with_canceled_prompt_indicator(Styled::new("<skipped>").with_fg(Color::DarkYellow))
 }
 
-pub fn update_project_source(config: &ReleaserConfig) {
+pub fn update_project_source(config: &ReleaserConfig, require_long_msg: bool) {
     update_references(&config);
     match release_notes::generate_release_notes(
         &config.settings.git_url_prefix.clone().unwrap(),
@@ -86,7 +86,7 @@ pub fn update_project_source(config: &ReleaserConfig) {
 
             let mut notes = String::from("");
 
-            if config.settings.take_snapshots {
+            if require_long_msg {
                 notes = Editor::new("Description:")
                     .with_formatter(&|submission| {
                         let char_count = submission.chars().count();
