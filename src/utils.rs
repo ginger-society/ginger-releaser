@@ -110,9 +110,21 @@ pub fn update_project_source(config: &ReleaserConfig, require_long_msg: bool) {
                 config.version.formatted(),
                 notes
             );
+
+            let add_status = Command::new("git")
+                .arg("add")
+                .arg(".")
+                .status()
+                .expect("Failed to add files");
+
+            if !add_status.success() {
+                println!("Failed to add files");
+                return;
+            }
+
             let status = Command::new("git")
                 .arg("commit")
-                .arg("-am")
+                .arg("-m")
                 .arg(&commit_message)
                 .status()
                 .expect("Failed to commit version bump");

@@ -59,10 +59,10 @@ async fn main() {
 
             bump_version(bump_type.clone(), &mut config.version);
             write_releaser_config_file(file_path, &config).unwrap();
-            update_project_source(&config, bump_type == BumpType::Major);
-            if config.settings.take_snapshots {
+            if config.settings.take_snapshots && bump_type == BumpType::Minor {
                 generate_snapshot(&config).await
             }
+            update_project_source(&config, bump_type == BumpType::Minor);
         }
     }
 }

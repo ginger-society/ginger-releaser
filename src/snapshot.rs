@@ -2,14 +2,21 @@ use ginger_shared_rs::{
     read_service_config_file, utils::get_token_from_file_storage, ReleaserConfig,
 };
 use serde::{Deserialize, Serialize};
-use std::{fs::create_dir_all, fs::File, io::Write, path::Path};
+use std::{
+    fs::{create_dir_all, File},
+    io::Write,
+    path::Path,
+    process::exit,
+};
 use MetadataService::{
     apis::default_api::{
-        metadata_get_dbschemas_and_tables, metadata_get_services_and_envs,
-        metadata_get_user_packages, MetadataGetDbschemasAndTablesParams,
-        MetadataGetServicesAndEnvsParams, MetadataGetUserPackagesParams,
+        metadata_create_snapshot, metadata_get_dbschemas_and_tables,
+        metadata_get_services_and_envs, metadata_get_user_packages, MetadataCreateSnapshotParams,
+        MetadataGetDbschemasAndTablesParams, MetadataGetServicesAndEnvsParams,
+        MetadataGetUserPackagesParams,
     },
     get_configuration,
+    models::CreateSnapshotRequest,
 };
 
 // Struct to hold the snapshot data
@@ -18,7 +25,6 @@ struct Snapshot {
     services: Vec<ServiceSnapshot>,
     packages: Vec<PackageSnapshot>,
     databases: Vec<DatabaseSnapshot>,
-    notes: String,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -139,8 +145,29 @@ pub async fn generate_snapshot(config: &ReleaserConfig) {
         services,
         packages,
         databases,
-        notes: String::from(""),
     };
+
+    match metadata_create_snapshot(
+        &metadata_config,
+        MetadataCreateSnapshotParams {
+            create_snapshot_request: CreateSnapshotRequest {
+                version: config.version.formatted(),
+                org_id: service_config.organization_id.clone(),
+                infra_repo_origin: config.settings.git_url_prefix.clone().unwrap(),
+            },
+        },
+    )
+    .await
+    {
+        Ok(_) => {
+            println!("Snapshot created on the dev portal")
+        }
+        Err(e) => {
+            println!("{:?}", e);
+            println!("Error creating snapshot on the portal");
+            exit(1);
+        }
+    }
 
     // Create the .snapshots directory if it doesn't exist
     create_dir_all("snapshots").unwrap();
