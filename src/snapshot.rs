@@ -1,5 +1,6 @@
 use ginger_shared_rs::{
-    read_service_config_file, utils::get_token_from_file_storage, ReleaserConfig,
+    read_package_metadata_file, read_service_config_file, utils::get_token_from_file_storage,
+    ReleaserConfig,
 };
 use serde::{Deserialize, Serialize};
 use std::{
@@ -147,6 +148,10 @@ pub async fn generate_snapshot(config: &ReleaserConfig) {
         databases,
     };
 
+    let package_metadata = read_package_metadata_file("metadata.toml").unwrap();
+
+    let links_str = serde_json::to_string(&package_metadata.links).unwrap();
+
     match metadata_create_snapshot(
         &metadata_config,
         MetadataCreateSnapshotParams {
@@ -154,6 +159,7 @@ pub async fn generate_snapshot(config: &ReleaserConfig) {
                 version: config.version.formatted(),
                 org_id: service_config.organization_id.clone(),
                 infra_repo_origin: config.settings.git_url_prefix.clone().unwrap(),
+                quick_links: links_str,
             },
         },
     )
