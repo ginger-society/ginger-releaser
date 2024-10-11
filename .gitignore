@@ -4,3 +4,4 @@ bin
 .env
 MetadataService_client
 .ginger.tmp
+.DS_Store
