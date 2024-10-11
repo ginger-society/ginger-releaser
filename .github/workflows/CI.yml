@@ -23,28 +23,8 @@ jobs:
     - name: Update pipeline to running
       run: ginger-connector update-pipeline stage running
 
-    - name: Set up Rust
-      uses: actions-rust-lang/setup-rust-toolchain@v1
-
-    - name: Cache Cargo registry
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cargo/registry
-          ~/.cargo/git
-        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-cargo-
-
     - name: Build Docker image
       run: docker build . --build-arg GINGER_TOKEN=${{ secrets.GINGER_TOKEN }}
-    
-    - name: Publish Crate
-      env:
-        CRATES_IO_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
-      run: |
-        cargo publish --token $CRATES_IO_TOKEN
-      continue-on-error: true  # This allows the workflow to continue even if publishing fails
 
     - name: Update pipeline to passing
       run: ginger-connector update-pipeline stage passing
